@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstname: MyString
+  lastname: MyString
+  dob: 2018-06-04
+  enrolled: 2018-06-04
+  completed: 2018-06-04
+  express: false
+  quantity: 1
+  studentid: MyString
+  department: MyString
+  college: MyString
+  school: MyText
+  phone: MyText
+  programme: MyText
+  address: MyText
+  reason: MyText
+  type: 
+  processed: false
+
+two:
+  firstname: MyString
+  lastname: MyString
+  dob: 2018-06-04
+  enrolled: 2018-06-04
+  completed: 2018-06-04
+  express: false
+  quantity: 1
+  studentid: MyString
+  department: MyString
+  college: MyString
+  school: MyText
+  phone: MyText
+  programme: MyText
+  address: MyText
+  reason: MyText
+  type: 
+  processed: false
