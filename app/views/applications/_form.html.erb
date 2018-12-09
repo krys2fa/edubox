@@ -1,99 +1,108 @@
-<%= form_with(model: application, local: true) do |form| %>
-  <% if application.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(application.errors.count, "error") %> prohibited this application from being saved:</h2>
+<div class="card card-login mx-auto mt-5">
 
-      <ul>
-      <% application.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  <div class="card-body">
+      <%= form_with(model: application, local: true) do |form| %>
+        <% if application.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(application.errors.count, "error") %> prohibited this application from being saved:</h2>
+
+            <ul>
+            <% application.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <div class="form-group-label">
+            <%= form.label :firstname %>
+            <%= form.text_field :firstname, id: :application_firstname :class "form-control"%>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= form.label :lastname %>
+          <%= form.text_field :lastname, id: :application_lastname %>
+        </div>
+
+        <div class="field">
+          <%= form.label :dob %>
+          <%= form.date_select :dob, id: :application_dob %>
+        </div>
+
+        <div class="field">
+          <%= form.label :enrolled %>
+          <%= form.date_select :enrolled, id: :application_enrolled %>
+        </div>
+
+        <div class="field">
+          <%= form.label :completed %>
+          <%= form.date_select :completed, id: :application_completed %>
+        </div>
+
+        <div class="field">
+          <%= form.label :express %>
+          <%= form.check_box :express, id: :application_express %>
+        </div>
+
+         <div class="field">
+          <%= form.label :document_id %>
+          <%= form.collection_select :document_id, Document.order(:name),:id,:name, include_blank: true %>
+          <%#= form.number_field :quantity, id: :application_quantity %>
+        </div>
+
+        <div class="field">
+          <%= form.label :quantity %>
+          <%= form.number_field :quantity, id: :application_quantity %>
+        </div>
+
+        <div class="field">
+          <%= form.label :studentid %>
+          <%= form.text_field :studentid, id: :application_studentid %>
+        </div>
+
+        <div class="field">
+          <%= form.label :department %>
+          <%= form.text_field :department, id: :application_department %>
+        </div>
+
+        <div class="field">
+          <%= form.label :college %>
+          <%= form.text_field :college, id: :application_college %>
+        </div>
+
+        <div class="field">
+          <%= form.label :school %>
+          <%= form.text_area :school, id: :application_school %>
+        </div>
+
+        <div class="field">
+          <%= form.label :phone %>
+          <%= form.text_area :phone, id: :application_phone %>
+        </div>
+
+        <div class="field">
+          <%= form.label :programme %>
+          <%= form.text_area :programme, id: :application_programme %>
+        </div>
+
+        <div class="field">
+          <%= form.label :address %>
+          <%= form.text_area :address, id: :application_address %>
+        </div>
+
+        <div class="field">
+          <%= form.label :reason %>
+          <%= form.text_area :reason, id: :application_reason %>
+        </div>
+
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :firstname %>
-    <%= form.text_field :firstname, id: :application_firstname %>
-  </div>
+  </div>    
 
-  <div class="field">
-    <%= form.label :lastname %>
-    <%= form.text_field :lastname, id: :application_lastname %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dob %>
-    <%= form.date_select :dob, id: :application_dob %>
-  </div>
-
-  <div class="field">
-    <%= form.label :enrolled %>
-    <%= form.date_select :enrolled, id: :application_enrolled %>
-  </div>
-
-  <div class="field">
-    <%= form.label :completed %>
-    <%= form.date_select :completed, id: :application_completed %>
-  </div>
-
-  <div class="field">
-    <%= form.label :express %>
-    <%= form.check_box :express, id: :application_express %>
-  </div>
-
-   <div class="field">
-    <%= form.label :document_id %>
-    <%= form.collection_select :document_id, Document.order(:name),:id,:name, include_blank: true %>
-    <%#= form.number_field :quantity, id: :application_quantity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity, id: :application_quantity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :studentid %>
-    <%= form.text_field :studentid, id: :application_studentid %>
-  </div>
-
-  <div class="field">
-    <%= form.label :department %>
-    <%= form.text_field :department, id: :application_department %>
-  </div>
-
-  <div class="field">
-    <%= form.label :college %>
-    <%= form.text_field :college, id: :application_college %>
-  </div>
-
-  <div class="field">
-    <%= form.label :school %>
-    <%= form.text_area :school, id: :application_school %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_area :phone, id: :application_phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :programme %>
-    <%= form.text_area :programme, id: :application_programme %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_area :address, id: :application_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :reason %>
-    <%= form.text_area :reason, id: :application_reason %>
-  </div>
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
