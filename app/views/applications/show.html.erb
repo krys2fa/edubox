@@ -1,89 +1,104 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @application.firstname %>
-</p>
+<div class="column" id="content">
+  <div class="ui grid">
+    
+    <div class="ui divider"></div>
+    
+    <div class="ui hidden section divider"></div>
+    <div class="row">
+      <h1 class="ui huge header">
+        View Application
+      </h1>
+    </div>
+    <div class="ui divider"></div>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @application.lastname %>
-</p>
+    <div class="row">
 
-<p>
-  <strong>Dob:</strong>
-  <%= @application.dob %>
-</p>
+    <p>
+      <strong>Firstname:</strong>
+      <%= @application.firstname %>
+    </p>
 
-<p>
-  <strong>Enrolled:</strong>
-  <%= @application.enrolled %>
-</p>
+    <p>
+      <strong>Lastname:</strong>
+      <%= @application.lastname %>
+    </p>
 
-<p>
-  <strong>Completed:</strong>
-  <%= @application.completed %>
-</p>
+    <p>
+      <strong>Dob:</strong>
+      <%= @application.dob %>
+    </p>
 
-<p>
-  <strong>Express:</strong>
-  <%= @application.express %>
-</p>
+    <p>
+      <strong>Enrolled:</strong>
+      <%= @application.enrolled %>
+    </p>
 
-<p>
-  <strong>Document:</strong>
-  <%= @document %>
-</p>
+    <p>
+      <strong>Completed:</strong>
+      <%= @application.completed %>
+    </p>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @application.quantity %>
-</p>
+    <p>
+      <strong>Express:</strong>
+      <%= @application.express %>
+    </p>
 
-<p>
-  <strong>Studentid:</strong>
-  <%= @application.studentid %>
-</p>
+    <p>
+      <strong>Document:</strong>
+      <%= @document %>
+    </p>
 
-<p>
-  <strong>Department:</strong>
-  <%= @application.department %>
-</p>
+    <p>
+      <strong>Quantity:</strong>
+      <%= @application.quantity %>
+    </p>
 
-<p>
-  <strong>College:</strong>
-  <%= @application.college %>
-</p>
+    <p>
+      <strong>Studentid:</strong>
+      <%= @application.studentid %>
+    </p>
 
-<p>
-  <strong>School:</strong>
-  <%= @application.school %>
-</p>
+    <p>
+      <strong>Department:</strong>
+      <%= @application.department %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @application.phone %>
-</p>
+    <p>
+      <strong>College:</strong>
+      <%= @application.college %>
+    </p>
 
-<p>
-  <strong>Programme:</strong>
-  <%= @application.programme %>
-</p>
+    <p>
+      <strong>School:</strong>
+      <%= @application.school %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @application.address %>
-</p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @application.phone %>
+    </p>
 
-<p>
-  <strong>Reason:</strong>
-  <%= @application.reason %>
-</p>
+    <p>
+      <strong>Programme:</strong>
+      <%= @application.programme %>
+    </p>
 
-<p>
-  <strong>Processed:</strong>
-  <%= @application.processed %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @application.address %>
+    </p>
 
-<%= link_to 'Edit Applications', edit_application_path(@application) %> |
-<%= link_to 'All Applications', applications_path %>
+    <p>
+      <strong>Reason:</strong>
+      <%= @application.reason %>
+    </p>
+
+    <p>
+      <strong>Processed:</strong>
+      <%= @application.processed %>
+    </p>
+  </div>
+<%= link_to 'Edit Applications', edit_application_path(@application), class: "ui basic button" %> |
+ <%= link_to 'All Applications', applications_path , class: "ui basic button" %>

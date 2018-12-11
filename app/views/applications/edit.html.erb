@@ -1,6 +1,23 @@
-<h1>Editing Application</h1>
+<div class="column" id="content">
+  <div class="ui grid">
+    
+    <div class="ui divider"></div>
+    
+    <div class="ui hidden section divider"></div>
+    <div class="row">
+      <h1 class="ui huge header">
+        Editing Application 
+      </h1>
+    </div>
+    <div class="ui divider"></div>
 
-<%= render 'form', application: @application %>
+    <div class="row">
 
-<%= link_to 'View Application', @application %> |
-<%= link_to 'All Applications', applications_path %>
+        <%= render 'form', application: @application %>
+
+    </div>
+  </div>
+</div>
+
+<%= link_to 'View Application', @application, class: "ui basic button" %> |
+<%= link_to 'All Applications', applications_path, class: "ui basic button" %>
