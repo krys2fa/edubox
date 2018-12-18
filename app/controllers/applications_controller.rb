@@ -5,7 +5,7 @@ class ApplicationsController < ApplicationController
   # GET /applications
   # GET /applications.json
   def index
-    @applications = Application.all
+    @applications = current_user.applications
   end
 
   # GET /applications/1
@@ -16,7 +16,7 @@ class ApplicationsController < ApplicationController
 
   # GET /applications/new
   def new
-    @application = Application.new
+    @application = current_user.applications.new
   end
 
   # GET /applications/1/edit
@@ -26,7 +26,7 @@ class ApplicationsController < ApplicationController
   # POST /applications
   # POST /applications.json
   def create
-    @application = Application.new(application_params)
+    @application = current_user.applications.new(application_params)
 
     respond_to do |format|
       if @application.save
@@ -72,7 +72,7 @@ class ApplicationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def application_params
       params.require(:application).permit(:firstname, :lastname, :dob, :enrolled, 
-                                          :completed, :express, :quantity, :studentid, 
+                                          :completed, :express, :document_id, :quantity, :studentid, 
                                           :department, :college, :school, :phone, :programme, 
                                           :address, :reason, :type, :processed)
     end
