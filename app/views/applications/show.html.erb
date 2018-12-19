@@ -1,8 +1,7 @@
-<p id="notice"><%= notice %></p>
-
+<%= render :partial => "layouts/shared/sidebar" %>
 <div class="column" id="content">
   <div class="ui grid">
-    
+    <%= render :partial => "layouts/shared/notice" %>
     <div class="ui divider"></div>
     
     <div class="ui hidden section divider"></div>
@@ -13,92 +12,93 @@
     </div>
     <div class="ui divider"></div>
 
-    <div class="row">
+    <div class="ui horizontal list">
 
-    <p>
-      <strong>Firstname:</strong>
-      <%= @application.firstname %>
-    </p>
+      <div class="item">
+        <strong>First Name:</strong>
+        <%= @application.firstname %>
+      </div>
 
-    <p>
-      <strong>Lastname:</strong>
-      <%= @application.lastname %>
-    </p>
+      <div class="item">
+        <strong>Last Name:</strong>
+        <%= @application.lastname %>
+      </div>
 
-    <p>
-      <strong>Dob:</strong>
-      <%= @application.dob %>
-    </p>
+      <div class="item">
+        <strong>Date of Birth:</strong>
+        <%= @application.dob %>
+      </div>
 
-    <p>
-      <strong>Enrolled:</strong>
-      <%= @application.enrolled %>
-    </p>
+      <div class="item">
+        <strong>Enrolled:</strong>
+        <%= @application.enrolled %>
+      </div>
 
-    <p>
-      <strong>Completed:</strong>
-      <%= @application.completed %>
-    </p>
+      <div class="item">
+        <strong>Completed:</strong>
+        <%= @application.completed %>
+      </div>
 
-    <p>
-      <strong>Express:</strong>
-      <%= @application.express %>
-    </p>
+      <div class="item">
+        <strong>Express:</strong>
+        <%= @application.express %>
+      </div>
 
-    <p>
-      <strong>Document:</strong>
-      <%= @document %>
-    </p>
+      <div class="item">
+        <strong>Document:</strong>
+        <%= @document %>
+      </div>
 
-    <p>
-      <strong>Quantity:</strong>
-      <%= @application.quantity %>
-    </p>
+      <div class="item">
+        <strong>Quantity:</strong>
+        <%= @application.quantity %>
+      </div>
 
-    <p>
-      <strong>Studentid:</strong>
-      <%= @application.studentid %>
-    </p>
+      <div class="item">
+        <strong>Student ID:</strong>
+        <%= @application.studentid %>
+      </div>
 
-    <p>
-      <strong>Department:</strong>
-      <%= @application.department %>
-    </p>
+      <div class="item">
+        <strong>Department:</strong>
+        <%= @application.department %>
+      </div>
 
-    <p>
-      <strong>College:</strong>
-      <%= @application.college %>
-    </p>
+      <div class="item">
+        <strong>College:</strong>
+        <%= @application.college %>
+      </div>
 
-    <p>
-      <strong>School:</strong>
-      <%= @application.school %>
-    </p>
+      <div class="item">
+        <strong>School:</strong>
+        <%= @application.school %>
+      </div>
 
-    <p>
-      <strong>Phone:</strong>
-      <%= @application.phone %>
-    </p>
+      <div class="item">
+        <strong>Phone:</strong>
+        <%= @application.phone %>
+      </div>
 
-    <p>
-      <strong>Programme:</strong>
-      <%= @application.programme %>
-    </p>
+      <div class="item">
+        <strong>Programme:</strong>
+        <%= @application.programme %>
+      </div>
 
-    <p>
-      <strong>Address:</strong>
-      <%= @application.address %>
-    </p>
+      <div class="item">
+        <strong>Address:</strong>
+        <%= @application.address %>
+      </div>
 
-    <p>
-      <strong>Reason:</strong>
-      <%= @application.reason %>
-    </p>
+      <div class="item">
+        <strong>Reason:</strong>
+        <%= @application.reason %>
+      </div>
 
-    <p>
-      <strong>Processed:</strong>
-      <%= @application.processed %>
-    </p>
+      <div class="item">
+        <strong>Processed:</strong>
+        <%= @application.processed %>
+      </div>
   </div>
-<%= link_to 'Edit Applications', edit_application_path(@application), class: "ui basic button" %> |
- <%= link_to 'All Applications', applications_path , class: "ui basic button" %>
+
+<%= link_to 'Edit Applications', edit_application_path(@application), class: "ui large button" %> |
+ <%= link_to 'All Applications', applications_path , class: "ui large button" %>
