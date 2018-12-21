@@ -1,6 +1,22 @@
-<h1>Editing Document</h1>
+<%= render :partial => "layouts/shared/sidebar" %>
+<div class="column" id="content">
+  <div class="ui grid">
+    <%= render :partial => "layouts/shared/notice" %>
+    <div class="ui divider"></div>
+    
+    <div class="ui hidden section divider"></div>
+    <div class="row">
+      <h1 class="ui huge header">
+        Editing Document 
+      </h1>
+    </div>
+    <div class="ui divider"></div>
 
-<%= render 'form', document: @document %>
+    <div class="row">
+        <%= render 'form', document: @document %>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Show', @document %> |
-<%= link_to 'Back', documents_path %>
+<%= link_to 'View Document', @document, class: "ui basic button"  %> |
+<%= link_to 'All Documents', documents_path, class: "ui basic button"  %>

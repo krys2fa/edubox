@@ -1,6 +1,6 @@
 <%= render :partial => "layouts/shared/sidebar" %>
 <div class="column" id="content">
-  <div class="ui grid">
+  <div class="ui ">
     <%= render :partial => "layouts/shared/notice" %>
     <div class="ui divider"></div>
     
@@ -11,8 +11,6 @@
       </h1>
     </div>
     <div class="ui divider"></div>
-
-    <div class="ui horizontal list">
 
       <div class="item">
         <strong>First Name:</strong>
@@ -100,5 +98,7 @@
       </div>
   </div>
 
-<%= link_to 'Edit Applications', edit_application_path(@application), class: "ui large button" %> |
- <%= link_to 'All Applications', applications_path , class: "ui large button" %>
+  <%= link_to 'Edit Applications', edit_application_path(@application), class: "ui large button" %> |
+  <%= link_to 'All Applications', applications_path , class: "ui large button" %>
+
+</div>

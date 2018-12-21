@@ -1,5 +1,24 @@
-<h1>New Document</h1>
+<%= render :partial => "layouts/shared/sidebar" %>
 
-<%= render 'form', document: @document %>
+<div class="container" id="content">
+  <div class="ui grid">
+    <%= render :partial => "layouts/shared/notice"%>
+    
+    <div class="ui divider"></div>
+    
+    <div class="ui hidden section divider"></div>
+    <div class="row">
+      <h1 class="ui huge header">
+        Create A New Document 
+      </h1>
+    </div>
+    <div class="ui divider"></div>
 
-<%= link_to 'Back', documents_path %>
+    <div class="row">
+        <%= render 'form', document: @document %>
+    </div>
+
+    </div>
+</div>
+
+<%#= link_to 'All Documents', documents_path, class: "ui basic button"  %>

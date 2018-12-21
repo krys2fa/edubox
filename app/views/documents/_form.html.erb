@@ -1,22 +1,32 @@
-<%= form_with(model: document, local: true) do |form| %>
-  <% if document.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(document.errors.count, "error") %> prohibited this document from being saved:</h2>
+<div class="container">
 
-      <ul>
-      <% document.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  <div class="row">
+
+
+    <%= form_with(model: document, local: true) do |form| %>
+      <% if document.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(document.errors.count, "error") %> prohibited this document from being saved:</h2>
+
+          <ul>
+          <% document.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :document_name %>
-  </div>
+       <div class="ui large form">
+          <div class='equal width fields'>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+            <div class="field">
+              <%= form.label :name %>
+              <%= form.text_field :name, id: :document_name %>
+            </div>
+
+          </div>
+        </div>  
+
+        <%= form.submit 'Submit Application', :class => "ui submit button large" %>
+        
+    <% end %>
