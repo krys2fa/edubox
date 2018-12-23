@@ -4,14 +4,15 @@
 
 <div class="column" id="sidebar">
           <div class="ui secondary vertical fluid menu">
-            <%=link_to 'Dashboard', applications_path, class: "item" %>
+            <%=link_to 'Dashboard', dashboard_index_path, class: "item" %>
             <%=link_to 'Applications', applications_path, class: "active item" %>
-            <%=link_to 'Documents', documents_path, class: "item" %>
+            <%=link_to 'Pending Applications', applications_path, class: "item" %>
+            
 
             <div class="ui hidden divider"></div>
 
             <% if current_user.admin? %>
-              <%=link_to 'Orders', '#', class: "item" %>
+              <%=link_to 'Documents', documents_path, class: "item" %>
               <%=link_to 'Agents', '#', class: "item" %>
               <%=link_to 'Customers','#', class: "item" %>
             <% end %>
