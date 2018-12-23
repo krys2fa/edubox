@@ -7,8 +7,13 @@
             <%=link_to 'Dashboard', applications_path, class: "item" %>
             <%=link_to 'Applications', applications_path, class: "active item" %>
             <%=link_to 'Documents', documents_path, class: "item" %>
-            <!--<a class="item">Documents</a>-->
-            <a class="item">Orders</a>
+
+            <div class="ui hidden divider"></div>
+            
+            <%=link_to 'Orders', orders_path, class: "item" %>
+            <%=link_to 'Agents', agents_path, class: "item" %>
+            <%=link_to 'Customers', customers_path, class: "item" %>
+
             <!--<a class="item">Export</a>
 
             <div class="ui hidden divider"></div>
