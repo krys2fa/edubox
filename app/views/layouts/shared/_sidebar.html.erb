@@ -9,10 +9,12 @@
             <%=link_to 'Documents', documents_path, class: "item" %>
 
             <div class="ui hidden divider"></div>
-            
-            <%=link_to 'Orders', orders_path, class: "item" %>
-            <%=link_to 'Agents', agents_path, class: "item" %>
-            <%=link_to 'Customers', customers_path, class: "item" %>
+
+            <% if current_user.admin? %>
+              <%=link_to 'Orders', '#', class: "item" %>
+              <%=link_to 'Agents', '#', class: "item" %>
+              <%=link_to 'Customers','#', class: "item" %>
+            <% end %>
 
             <!--<a class="item">Export</a>
 
