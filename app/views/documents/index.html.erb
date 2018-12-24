@@ -26,10 +26,10 @@
           <% @documents.each do |document| %>
             <tr>
               <td><%= document.name %></td>
+              <td><%= link_to '<i class="eye icon"></i>View'.html_safe, document, class: "ui basic button" %></td>
               <% if current_user.admin? %>
-                <td><%= link_to 'View', document, class: "ui basic button" %></td>
-                <td><%= link_to 'Edit', edit_document_path(document), class: "ui basic button" %></td>
-                <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' }, class: "negative ui button" %></td>
+                <td><%= link_to '<i class="edit outline icon"></i>Edit'.html_safe, edit_document_path(document), class: "ui basic button" %></td>
+                <td><%= link_to '<i class="trash icon"></i>Delete'.html_safe, document, method: :delete, data: { confirm: 'Are you sure?' }, class: "negative ui button" %></td>
               <% end %>
             </tr>
           <% end %>
@@ -39,4 +39,7 @@
 
 <br>
 
-<%= link_to 'Add Document', new_document_path, class: "positive ui button"  %>
+
+<% if current_user.admin?%>
+  <%= link_to '<i class="plus circle icon"></i>Add Document'.html_safe, new_document_path, class: "positive large ui button item"  %>
+<% end %>

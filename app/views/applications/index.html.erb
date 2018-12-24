@@ -38,9 +38,9 @@
             <td><%= application.firstname %></td>
             <td><%= application.lastname %></td>
             <td><%= application.processed %></td>
-            <td><%= link_to 'View', application, class: "ui basic button" %></td>
-            <td><%= link_to 'Edit', edit_application_path(application), class: "ui basic button" %></td>
-            <td><%= link_to 'Delete', application, method: :delete, data: { confirm: 'Are you sure?' }, class: "negative ui button" %></td>
+            <td><%= link_to '<i class="eye icon"></i>View'.html_safe, application, class: "ui basic button" %></td>
+            <td><%= link_to '<i class="edit outline icon"></i>Edit'.html_safe, edit_application_path(application), class: "ui basic button" %></td>
+            <td><%= link_to '<i class="trash icon"></i>Delete'.html_safe, application, method: :delete, data: { confirm: 'Are you sure?' }, class: "negative ui button" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -50,7 +50,7 @@
 
 <br>
 
-<%= link_to 'New Application', new_application_path, class: "positive ui button" %>
+<%= link_to '<i class="plus circle icon"></i>New Application'.html_safe, new_application_path, class: "positive ui button" %>
 
 
 

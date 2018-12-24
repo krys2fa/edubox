@@ -31,10 +31,10 @@
               <td><%= institution.name %></td>
               <td><%= institution.location %></td>
             <!-- <td><%#= institution.contact %></td>-->
+                <td><%= link_to '<i class="eye icon"></i>View'.html_safe, institution, class: "ui basic button" %></td>
               <% if current_user.admin?%>
-                <td><%= link_to 'Show', institution, class: "ui basic button" %></td>
-                <td><%= link_to 'Edit', edit_institution_path(institution), class: "ui basic button" %></td>
-                <td><%= link_to 'Destroy', institution, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui negative button" %></td>
+                <td><%= link_to '<i class="edit outline icon"></i>Edit'.html_safe, edit_institution_path(institution), class: "ui basic button" %></td>
+                <td><%= link_to '<i class="trash icon"></i>Delete'.html_safe, institution, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui negative button" %></td>
               <% end %>
             </tr>
           <% end %>
@@ -43,4 +43,6 @@
 
       <br>
 
-<%= link_to 'New Institution', new_institution_path, class: "positive ui button"  %>
+<% if current_user.admin?%>
+  <%= link_to '<i class="plus circle icon"></i>Add Institution'.html_safe, new_institution_path, class: "positive large ui button"  %>
+<% end %>
