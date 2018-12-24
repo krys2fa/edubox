@@ -108,8 +108,11 @@
             </div>
 
             <div class="field">
-              <%= form.label :school %>
-              <%= form.text_field :school, id: :application_school, :class => 'form-control' %>
+              <%#= form.label :school %>
+              <%#= form.text_field :school, id: :application_school, :class => 'form-control' %>
+
+              <%= form.label :institution_id %>
+              <%= form.collection_select :institution_id, Institution.order(:name),:id,:name, include_blank: true%>
             </div>
 
           </div>
