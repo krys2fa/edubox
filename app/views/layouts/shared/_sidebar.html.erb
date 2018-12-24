@@ -1,38 +1,22 @@
 
     <div class="ui grid">
-    <div class="row">
+      <div class="row">
 
-<div class="column" id="sidebar">
+          <div class="column" id="sidebar">
           <div class="ui secondary vertical fluid menu">
             <%=link_to '<i class="chart line icon"></i>Dashboard'.html_safe, dashboard_index_path, class: "item" %>
             <%=link_to '<i class="folder open icon"></i>Applications'.html_safe, applications_path, class: "active item" %>
             <%=link_to '<i class="sync alternate icon"></i>Pending Applications'.html_safe, applications_path, class: "item" %>
+            <%=link_to '<i class="home icon"></i>Institutions'.html_safe, institutions_path, class: "item" %>
+            <%=link_to '<i class="file alternate icon"></i>Documents'.html_safe, documents_path, class: "item" %>
             
 
             <div class="ui hidden divider"></div>
 
             <% if current_user.admin? %>
-              <%=link_to '<i class="file alternate icon"></i>Documents'.html_safe, documents_path, class: "item" %>
               <%=link_to '<i class="user secret icon"></i>Agents'.html_safe, '#', class: "item" %>
               <%=link_to '<i class="users icon"></i>Customers'.html_safe,'#', class: "item" %>
-              <%=link_to '<i class="home icon"></i>Institutions'.html_safe, institutions_path, class: "item" %>
             <% end %>
-
-            <!--<a class="item">Export</a>
-
-            <div class="ui hidden divider"></div>
-
-             <a class="item">Nav item</a>
-            <a class="item">Nav item again</a>
-            <a class="item">One more nav</a>
-            <a class="item">Another nav item</a>
-            <a class="item">More navigation</a>
-
-            <div class="ui hidden divider"></div>
-
-            <a class="item">Macintosh</a>
-            <a class="item">Linux</a>
-            <a class="item">Windows</a> -->
 
           </div>
         </div>

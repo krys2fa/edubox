@@ -26,9 +26,11 @@
           <% @documents.each do |document| %>
             <tr>
               <td><%= document.name %></td>
-              <td><%= link_to 'View', document, class: "ui basic button" %></td>
-              <td><%= link_to 'Edit', edit_document_path(document), class: "ui basic button" %></td>
-              <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' }, class: "negative ui button" %></td>
+              <% if current_user.admin? %>
+                <td><%= link_to 'View', document, class: "ui basic button" %></td>
+                <td><%= link_to 'Edit', edit_document_path(document), class: "ui basic button" %></td>
+                <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' }, class: "negative ui button" %></td>
+              <% end %>
             </tr>
           <% end %>
         </tbody>

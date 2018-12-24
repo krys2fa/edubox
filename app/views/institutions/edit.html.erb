@@ -1,6 +1,26 @@
-<h1>Editing Institution</h1>
+<%= render :partial => "layouts/shared/sidebar" %>
+<div class="column" id="content">
+  <div class="ui grid">
+    <%= render :partial => "layouts/shared/notice" %>
+    <div class="ui divider"></div>
+    
+    <div class="ui hidden section divider"></div>
+    <div class="row">
+      <h1 class="ui huge header">
+        Editing Institution 
+      </h1>
+    </div>
+    <div class="ui divider"></div>
 
-<%= render 'form', institution: @institution %>
+    <div class="row">
 
-<%= link_to 'Show', @institution %> |
-<%= link_to 'Back', institutions_path %>
+      <%= render 'form', institution: @institution %>
+
+    </div>
+  </div>
+</div>
+
+<%= link_to 'View Institution', @institution, class: "ui basic button" %> |
+<%= link_to 'All Institutions', institutions_path, class: "ui basic button" %>
+
+

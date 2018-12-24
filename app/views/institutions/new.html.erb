@@ -1,5 +1,26 @@
-<h1>New Institution</h1>
+<%= render :partial => "layouts/shared/sidebar" %>
 
-<%= render 'form', institution: @institution %>
+<div class="container" id="content">
+  <div class="ui grid">
+    <%= render :partial => "layouts/shared/notice"%>
+    
+    <div class="ui divider"></div>
+    
+    <div class="ui hidden section divider"></div>
+    <div class="row">
+      <h1 class="ui huge header">
+        Create A New Institution 
+      </h1>
+    </div>
+    <div class="ui divider"></div>
 
-<%= link_to 'Back', institutions_path %>
+    <div class="row">
+
+        <%= render 'form', institution: @institution %>
+
+    </div>
+  </div>
+</div>
+
+
+<%= link_to '<i class="home icon"></i>All Institutions'.html_safe, institutions_path, class: "ui basic button" %>

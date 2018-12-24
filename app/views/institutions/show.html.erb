@@ -1,19 +1,31 @@
-<p id="notice"><%= notice %></p>
+<%= render :partial => "layouts/shared/sidebar" %>
+<div class="column" id="content">
+  <div class="ui ">
+    <%= render :partial => "layouts/shared/notice" %>
+    <div class="ui divider"></div>
+    
+    <div class="ui hidden section divider"></div>
+    <div class="row">
+      <h1 class="ui huge header">
+        View Institution
+      </h1>
+    </div>
+    <div class="ui divider"></div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @institution.name %>
-</p>
+    <div class="item">
+      <strong>Name:</strong>
+      <%= @institution.name %>
+    </div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @institution.location %>
-</p>
+    <div class="item">
+      <strong>Location:</strong>
+      <%= @institution.location %>
+    </div>
 
-<p>
-  <strong>Contact:</strong>
-  <%= @institution.contact %>
-</p>
+    <div class="item">
+      <strong>Contact:</strong>
+      <%= @institution.contact %>
+    </div>
 
-<%= link_to 'Edit', edit_institution_path(@institution) %> |
-<%= link_to 'Back', institutions_path %>
+<%= link_to 'Edit Institution', edit_institution_path(@institution), class: "ui large button" %> |
+<%= link_to 'All Institutions', institutions_path, class: "ui large button" %>

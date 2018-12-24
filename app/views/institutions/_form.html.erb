@@ -1,3 +1,8 @@
+<div class="container">
+
+  <div class="row">
+
+
 <%= form_with(model: institution, local: true) do |form| %>
   <% if institution.errors.any? %>
     <div id="error_explanation">
@@ -11,22 +16,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_area :name, id: :institution_name %>
-  </div>
+        <div class="ui large form">
+          <div class='equal width fields'>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_area :location, id: :institution_location %>
-  </div>
+            <div class="field">
+              <%= form.label :name %>
+              <%= form.text_field :name, id: :institution_name, :class => 'form-control' %>
+            </div>
 
-  <div class="field">
-    <%= form.label :contact %>
-    <%= form.text_area :contact, id: :institution_contact %>
-  </div>
+            <div class="field">
+              <%= form.label :location %>
+              <%= form.text_field :location, id: :institution_location, :class => 'form-control'  %>
+            </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+            <div class="field">
+              <%= form.label :contact %>
+              <%= form.text_field :contact, id: :institution_contact, :class => 'form-control'  %>
+            </div>
+
+            
+
+          </div>
+            <%= form.submit 'Submit Institution', :class => "ui submit button primary large" %>
+        </div>
 <% end %>
