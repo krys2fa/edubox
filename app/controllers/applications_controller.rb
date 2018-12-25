@@ -5,7 +5,11 @@ class ApplicationsController < ApplicationController
   # GET /applications
   # GET /applications.json
   def index
-    @applications = current_user.applications
+    if current_user.admin?
+      @applications = Application.all
+    else
+      @applications = current_user.applications
+    end
   end
 
   # GET /applications/1
