@@ -1,0 +1,45 @@
+<%= render :partial => "layouts/shared/sidebar" %>
+
+<div class="column" id="content">
+  <div class="ui grid">
+  <%= render :partial => "layouts/shared/notice"%>
+    <div class="ui divider"></div>
+    
+    <div class="ui hidden section divider"></div>
+    <div class="row">
+      <h1 class="ui huge header">
+        Customers
+      </h1>
+    </div>
+    <div class="ui divider"></div>
+
+    <div class="row">
+      <table class="ui single line striped selectable table">
+        <thead>
+          <tr>
+            <th>Customer Email</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @customers.each do |customer| %>
+            <tr>
+              <td><%= customer.email %></td>
+              <td><%#= link_to '<i class="eye icon"></i>View'.html_safe, customer, class: "ui basic button" %></td>
+              <% if current_user.admin? %>
+                <td><%#= link_to '<i class="edit outline icon"></i>Edit'.html_safe, edit_document_path(customer), class: "ui basic button" %></td>
+                <td><%#= link_to '<i class="trash icon"></i>Delete'.html_safe, customer, method: :delete, data: { confirm: 'Are you sure?' }, class: "negative ui button" %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+<br>
+
+
+<% if current_user.admin?%>
+  <%= link_to '<i class="plus circle icon"></i>Add Customer'.html_safe, '#', class: "positive large ui button item"  %>
+<% end %>

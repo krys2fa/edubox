@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :documents
   resources :applications
   root 'applications#index'
-  get 'dashboard/index' => 'dashboard#index'
+
+  get 'dashboard' => 'dashboard#index'
+  get 'agents' => 'agents#index'
+  get 'customers' => 'customers#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

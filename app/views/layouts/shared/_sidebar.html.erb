@@ -4,7 +4,7 @@
 
           <div class="column" id="sidebar">
           <div class="ui secondary vertical fluid menu">
-            <%=link_to '<i class="chart line icon"></i>Dashboard'.html_safe, dashboard_index_path, class: "item" %>
+            <%=link_to '<i class="chart line icon"></i>Dashboard'.html_safe, dashboard_path, class: "item" %>
             <%=link_to '<i class="folder open icon"></i>Applications'.html_safe, applications_path, class: "active item" %>
             <%=link_to '<i class="sync alternate icon"></i>Pending Applications'.html_safe, applications_path, class: "item" %>
             <%=link_to '<i class="home icon"></i>Institutions'.html_safe, institutions_path, class: "item" %>
@@ -14,8 +14,8 @@
             <div class="ui hidden divider"></div>
 
             <% if current_user.admin? %>
-              <%=link_to '<i class="user secret icon"></i>Agents'.html_safe, '#', class: "item" %>
-              <%=link_to '<i class="users icon"></i>Customers'.html_safe,'#', class: "item" %>
+              <%=link_to '<i class="user secret icon"></i>Agents'.html_safe, agents_path, class: "item" %>
+              <%=link_to '<i class="users icon"></i>Customers'.html_safe, customers_path, class: "item" %>
             <% end %>
 
           </div>
