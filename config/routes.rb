@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # end
   resources :documents
   resources :applications
-  root 'applications#index'
+  root 'dashboard#index'
 
   get 'dashboard' => 'dashboard#index'
   get 'agents' => 'agents#index'
