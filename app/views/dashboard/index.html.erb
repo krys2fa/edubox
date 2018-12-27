@@ -26,7 +26,7 @@
                 <div class="ui grey small horizontal statistic">
 
                   <div class="value">
-                    30,000
+                    <%= @applications_count %>
                   </div>
 
                   <div class="label">
@@ -37,7 +37,7 @@
 
               </div>
 
-              <table class="ui small very compact unstackable selectable olive table">
+              <table class="ui small very compact unstackable striped selectable olive table">
                 <thead>
                   <tr>
                     <th colspan="2">
@@ -49,19 +49,19 @@
                 <tbody>
                   <tr>
                     <td>Processed</td>
-                    <td class="right aligned">20,15</td>
+                    <td class="right aligned"><%= @processed_count %></td>
                   </tr>
                   <tr>
                     <td>Unprocessed</td>
-                    <td class="right aligned">4,30</td>
+                    <td class="right aligned"><%= @unprocessed_count %></td>
                   </tr>
                   <tr>
                     <td>Delivered</td>
-                    <td class="right aligned">20,15</td>
+                    <td class="right aligned"><%= @delivered_count %></td>
                   </tr>
                   <tr>
                     <td>Undelivered</td>
-                    <td class="right aligned">4,30</td>
+                    <td class="right aligned"><%= @undelivered_count %></td>
                   </tr>
                 </tbody>
               </table>
@@ -77,7 +77,7 @@
                 <div class="ui grey small horizontal statistic">
 
                   <div class="value">
-                    56
+                    <%= @institutions_count %>
                   </div>
 
                   <div class="label">
@@ -92,28 +92,21 @@
                 <thead>
                   <tr>
                     <th colspan="2">
-                      Institutions
+                      Institutions with Processed Applications
                     </th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  <tr>
-                    <td>KNUST - KUMASI</td>
-                    <td class="right aligned">20,15</td>
-                  </tr>
-                  <tr>
-                    <td>UG - LEGON</td>
-                    <td class="right aligned">4,30</td>
-                  </tr>
-                  <tr>
-                    <td>UCC</td>
-                    <td class="right aligned">20,15</td>
-                  </tr>
-                  <tr>
-                    <td>GIMPA</td>
-                    <td class="right aligned">4,30</td>
-                  </tr>
+
+                  <% @applications_per_institutions.each do | applications_per_institution| %>
+                    
+                    <tr>
+                      <td><%= applications_per_institution.name %></td>
+                      <td class="right aligned"><%= applications_per_institution.applications_count %></td>
+                    </tr>
+
+                  <% end %>
                 </tbody>
               </table>
 
@@ -130,7 +123,7 @@
                 <div class="ui grey small horizontal statistic">
 
                   <div class="value">
-                    200
+                    <%= @documents_count %>
                   </div>
 
                   <div class="label">
@@ -145,28 +138,21 @@
                 <thead>
                   <tr>
                     <th colspan="2">
-                      Documents
+                      Documents Available
                     </th>
                   </tr>
                 </thead>
 
                 <tbody>
+
+                  <% @documents.each do |document| %>
                   <tr>
-                    <td>Transcript</td>
-                    <td class="right aligned">20,15</td>
+                    <td><%= document.name %></td>
+                    <!-- <td class="right aligned">20,15</td> -->
                   </tr>
-                  <tr>
-                    <td>Statement of Purpose</td>
-                    <td class="right aligned">4,30</td>
-                  </tr>
-                  <tr>
-                    <td>Letter of English Proficiency</td>
-                    <td class="right aligned">20,15</td>
-                  </tr>
-                  <tr>
-                    <td>Certificate</td>
-                    <td class="right aligned">4,30</td>
-                  </tr>
+
+                  <% end %>
+                  
                 </tbody>
               </table>
               
@@ -181,7 +167,7 @@
                 <div class="ui grey small horizontal statistic">
 
                   <div class="value">
-                    12
+                    <%= @agents_count %>
                   </div>
 
                   <div class="label">
@@ -202,22 +188,99 @@
                 </thead>
 
                 <tbody>
+
+                  <% @agents.each do |agent| %>
+                    <tr>
+                      <td><%= agent.email %></td>
+                    </tr>
+                  <% end %>
+                 
+                </tbody>
+              </table>
+              
+            </div> 
+
+
+
+
+
+
+
+             <div class="seven wide column">
+              <div class="ui secondary segment left aligned">
+
+                <div class="ui grey small horizontal statistic">
+
+                  <div class="value">
+                    <%= @customer_count %>
+                  </div>
+
+                  <div class="label">
+                    Customers
+                  </div>
+
+                </div>
+
+              </div>
+
+              <table class="ui small very compact unstackable selectable olive table">
+                <thead>
                   <tr>
-                    <td>Transcript</td>
-                    <td class="right aligned">20,15</td>
+                    <th colspan="2">
+                      Customer Detail
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Active</td>
+                    <td class="right aligned"><%= @active_customer_count %></td>
                   </tr>
                   <tr>
-                    <td>Statement of Purpose</td>
-                    <td class="right aligned">4,30</td>
+                    <td>Inactive</td>
+                    <td class="right aligned"><%= @inactive_customer_count %></td>
                   </tr>
+                 
+                </tbody>
+              </table>
+              
+            </div> 
+
+
+
+            <div class="seven wide column">
+              <div class="ui secondary segment">
+
+                <div class="ui grey small horizontal statistic">
+
+                  <div class="value">
+                    <%= @admins_count %>
+                  </div>
+
+                  <div class="label">
+                    Admins
+                  </div>
+
+                </div>
+
+              </div>
+
+              <table class="ui small very compact unstackable selectable olive table">
+                <thead>
                   <tr>
-                    <td>Letter of English Proficiency</td>
-                    <td class="right aligned">20,15</td>
+                    <th colspan="2">
+                      Admins
+                    </th>
                   </tr>
-                  <tr>
-                    <td>Certificate</td>
-                    <td class="right aligned">4,30</td>
-                  </tr>
+                </thead>
+
+                <tbody>
+                  <% @admins.each do |admin| %>
+                    <tr>
+                      <td><%= admin.email %></td>
+                    </tr>
+                  <% end %>
                 </tbody>
               </table>
               
@@ -237,8 +300,24 @@
 
             <div class="ui hidden section divider"></div>
            
-            <div class="ui divider"></div> -->
+            <div class="ui divider"></div> 
             <div class="row">
+
+               <div class="ui primary segment">
+
+                <div class="ui grey small horizontal statistic">
+
+                  <div class="value">
+                    Intelligent
+                  </div>
+
+                  <div class="label">
+                    Graphs
+                  </div>
+
+                </div>
+
+              </div>
               <table class="ui single line striped selectable table">
                 <thead>
                   <tr>
@@ -534,6 +613,7 @@
                   </tr>
                 </tbody>
               </table>
+              -->
            <!--</div>
           </div>--> 
 
