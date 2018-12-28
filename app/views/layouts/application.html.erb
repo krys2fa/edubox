@@ -4,14 +4,14 @@
     <title>Edubox</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     
     <div class="ui inverted huge borderless fixed fluid menu">
-      <!--<a class="header item">Edubox</a>-->
       <%= link_to 'Edubox', root_path, class: "header item" %>
 
       <div class="right menu">
@@ -21,8 +21,6 @@
           </div>
         </div>
 
-        <!--<a class="item">Home</a>
-        <a class="item">About</a>-->
         <% if current_user %> 
 
              <div class="ui simple dropdown item">
@@ -31,8 +29,8 @@
                 <i class="dropdown icon"></i>
                 <div class="menu">
                   <a class="item"><i class="edit icon"></i> Edit Profile</a>
-                  <a class="item"><i class="globe icon"></i> Choose Language</a>
-                  <a class="item"><i class="settings icon"></i> Account Settings</a>
+                  <!-- <a class="item"><i class="globe icon"></i> Choose Language</a> 
+                  <a class="item"><i class="settings icon"></i> Account Settings</a> -->
                   <a class="item" href="/users/sign_out"><i class="sign-out icon"></i> Log Out</a>
                 </div>
               </div>
