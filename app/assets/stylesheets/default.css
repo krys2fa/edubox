@@ -12,6 +12,11 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+a.header.item,
+div.ui.simple.dropdown.item {
+    font-family: 'Montserrat', sans-serif;
+}
+
 footer.center.aligned p {
     text-align: center;
 }
@@ -390,19 +395,22 @@ body {
 }
 
 #sidebar .ui.menu>a.item {
-    color: #337ab7;
+    /* color: #337ab7; */
+    color: black;
     border-radius: 0 !important;
     font-family: 'Montserrat', sans-serif;
 }
 
 #sidebar .ui.menu>a.item.active {
-    background-color: #337ab7;
-    color: white;
+    /* background-color: #337ab7; */
+    background-color: black !important;
+    color: white !important;
     border: none !important;
 }
 
 #sidebar .ui.menu>a.item:hover {
-    background-color: #4f93ce;
+    /* background-color: #4f93ce; */
+    background-color: black;
     color: white;
 }
 
