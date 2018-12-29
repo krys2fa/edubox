@@ -24,6 +24,19 @@ $(document)
     $('.ui.form')
       .form({
         fields: {
+          username: {
+            identifier  : 'username',
+            rules: [
+              {
+                type   : 'empty',
+                prompt : 'Please enter your username'
+              },
+              {
+                type   : 'email',
+                prompt : 'Please enter a valid e-mail'
+              }
+            ]
+          },
           email: {
             identifier  : 'email',
             rules: [
@@ -68,11 +81,40 @@ $(document)
         </h1>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'ui large form'}) do |f| %>
-          <%= devise_error_messages! %>
+          <%#= devise_error_messages! %>
+
           <div class="field">
                 <div class="ui left icon input">
                   <i class="user icon"></i>
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "E-mail address" %>
+                  <%= f.text_field :firstname, autofocus: true, autocomplete: "firstname", placeholder: "First Name" %>
+                </div>
+          </div>
+
+          <div class="field">
+                <div class="ui left icon input">
+                  <i class="user icon"></i>
+                  <%= f.text_field :lastname, autocomplete: "lastname", placeholder: "Last Name" %>
+                </div>
+          </div>
+
+          <div class="field">
+                <div class="ui left icon input">
+                  <i class="user circle icon"></i>
+                  <%= f.text_field :username, autocomplete: "username", placeholder: "Username" %>
+                </div>
+          </div>
+
+          <div class="field">
+                <div class="ui left icon input">
+                  <i class="phone icon"></i>
+                  <%= f.text_field :phone, autocomplete: "phone", placeholder: "Phone" %>
+                </div>
+          </div>
+
+          <div class="field">
+                <div class="ui left icon input">
+                  <i class="mail icon"></i>
+                  <%= f.email_field :email, autocomplete: "email", placeholder: "E-mail address" %>
                 </div>
           </div>
   
