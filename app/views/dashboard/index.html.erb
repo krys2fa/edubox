@@ -3,9 +3,6 @@
 <div class="column" id="content">
   <div class="ui grid">
     <%= render :partial => "layouts/shared/notice"%>
-    <div class="ui divider"></div>
-    
-    <div class="ui hidden section divider"></div>
     <div class="row">
       <h1 class="ui huge header">
         Dashboard
@@ -20,7 +17,8 @@
 
           <div class="ui stackable grid  center aligned">
 
-           <div class="seven wide column">
+            <!-- Application Data section -->
+            <div class="seven wide column">
               <div class="ui secondary segment">
 
                 <div class="ui grey small horizontal statistic">
@@ -68,10 +66,9 @@
 
 
             </div>
-
-            
-
-           <div class="seven wide column">
+           
+            <!-- Institutions Data section -->
+            <div class="seven wide column">
               <div class="ui secondary segment">
 
                 <div class="ui grey small horizontal statistic">
@@ -113,10 +110,7 @@
 
             </div>
 
-
-
-
-
+            <!-- Documents Data section -->
             <div class="seven wide column">
               <div class="ui secondary segment">
 
@@ -159,8 +153,8 @@
             </div> 
 
 
-
-
+            <% if current_user.admin? %>
+            <!-- Agent Data section -->
             <div class="seven wide column">
               <div class="ui secondary segment">
 
@@ -200,12 +194,7 @@
               
             </div> 
 
-
-
-
-
-
-
+            <!-- Customer Data section -->
              <div class="seven wide column">
               <div class="ui secondary segment ">
 
@@ -248,7 +237,7 @@
             </div> 
 
 
-
+            <!-- Admin Data section -->
             <div class="seven wide column">
               <div class="ui secondary segment">
 
@@ -288,6 +277,8 @@
 
 
             <br/>
+
+            <% end %>
 
 
 

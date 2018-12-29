@@ -67,6 +67,14 @@ class ApplicationsController < ApplicationController
     end
   end
 
+  def pending
+    if current_user.admin?
+      @applications = Application.all.where("processed is false")
+    else
+      @applications = current_user.applications.where("processed is false")
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_application

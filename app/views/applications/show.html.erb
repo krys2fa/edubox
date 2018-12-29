@@ -2,9 +2,6 @@
 <div class="column" id="content">
   <div class="ui ">
     <%= render :partial => "layouts/shared/notice" %>
-    <div class="ui divider"></div>
-    
-    <div class="ui hidden section divider"></div>
     <div class="row">
       <h1 class="ui huge header">
         View Application
@@ -97,6 +94,7 @@
         <%= @application.processed %>
       </div>
   </div>
+  
 
   <%= link_to 'Edit Applications', edit_application_path(@application), class: "ui large button" %> |
   <%= link_to 'All Applications', applications_path , class: "ui large button" %>

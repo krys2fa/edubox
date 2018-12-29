@@ -2,9 +2,9 @@
 <div class="column" id="content">
   <div class="ui ">
     <%= render :partial => "layouts/shared/notice" %>
-    <div class="ui divider"></div>
+    <!--<div class="ui divider"></div>-->
     
-    <div class="ui hidden section divider"></div>
+    <!-- <div class="ui hidden section divider"></div> -->
     <div class="row">
       <h1 class="ui huge header">
         View Document
@@ -12,11 +12,17 @@
     </div>
     <div class="ui divider"></div>
 
+    <br />
+
     <div class="item">
       <strong>Document Name:</strong>
       <%= @document.name %>
     </div>
 
-    <%= link_to 'Edit', edit_document_path(@document), class: "ui large button"  %> |
+    <br />
+
+    <% if current_user.admin? %>
+      <%= link_to 'Edit', edit_document_path(@document), class: "ui large button"  %> |
+    <% end %>
     <%= link_to 'Back', documents_path, class: "ui large button"  %>
 </div>

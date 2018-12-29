@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'dashboard' => 'dashboard#index'
   get 'agents' => 'agents#index'
   get 'customers' => 'customers#index'
+  get 'pending' => 'applications#pending'
 
 
 
