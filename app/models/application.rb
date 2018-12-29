@@ -1,9 +1,8 @@
 class Application < ApplicationRecord
   has_one :document
-  belongs_to :application
+  belongs_to :user
   validates :firstname, :lastname, :dob, :enrolled, :completed, 
-  			:quantity, :studentid, :department, :college, :school, :phone, 
+  			:quantity, :studentid, :department, :college, :phone, 
         :programme, :address, :reason, :presence => true
         
-  belongs_to :user
 end
