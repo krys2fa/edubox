@@ -85,7 +85,7 @@ class ApplicationsController < ApplicationController
     def application_params
       params.require(:application).permit(:firstname, :lastname, :dob, :enrolled, 
                                           :completed, :express, :document_id, :quantity, :studentid, 
-                                          :department, :college, :school, :phone, :programme, 
+                                          :department, :college, :school, :phone, :programme, :institution_id,
                                           :address, :reason, :type, :processed)
     end
 end

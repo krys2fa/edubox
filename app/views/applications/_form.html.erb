@@ -34,7 +34,7 @@
             <div class="field">
               <%#= form.label :dob %>
               <label>Date of Birth:</label>
-              <%= form.date_select :dob, id: :application_dob %>
+              <%= form.text_field :dob, id: :application_dob %>
             </div>
           </div>
 
@@ -43,12 +43,12 @@
 
             <div class="field">
               <%= form.label :enrolled %>
-              <%= form.date_select :enrolled, id: :application_enrolled %>
+              <%= form.text_field :enrolled, id: :application_enrolled %>
             </div>
 
              <div class="field">
               <%= form.label :completed %>
-              <%= form.date_select :completed, id: :application_completed%>
+              <%= form.text_field :completed, id: :application_completed%>
             </div>
 
           </div>

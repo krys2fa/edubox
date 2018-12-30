@@ -59,3 +59,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'rails_admin'
+gem 'jquery-ui-rails', '5.0.5'
