@@ -82,21 +82,21 @@ $(document)
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'ui large form'}) do |f| %>
           <%#= devise_error_messages! %>
-
+          <!--
           <div class="field">
                 <div class="ui left icon input">
                   <i class="user icon"></i>
-                  <%= f.text_field :firstname, autofocus: true, autocomplete: "firstname", placeholder: "First Name" %>
+                  <%#= f.text_field :firstname, autofocus: true, autocomplete: "firstname", placeholder: "First Name" %>
                 </div>
           </div>
 
           <div class="field">
                 <div class="ui left icon input">
                   <i class="user icon"></i>
-                  <%= f.text_field :lastname, autocomplete: "lastname", placeholder: "Last Name" %>
+                  <%#= f.text_field :lastname, autocomplete: "lastname", placeholder: "Last Name" %>
                 </div>
           </div>
-
+          -->
           <div class="field">
                 <div class="ui left icon input">
                   <i class="user circle icon"></i>
@@ -106,7 +106,7 @@ $(document)
 
           <div class="field">
                 <div class="ui left icon input">
-                  <i class="phone icon"></i>
+                  <i class="mobile alternate icon"></i>
                   <%= f.text_field :phone, autocomplete: "phone", placeholder: "Phone" %>
                 </div>
           </div>

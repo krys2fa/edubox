@@ -39,7 +39,7 @@
                 <thead>
                   <tr>
                     <th colspan="2">
-                      Applications
+                      <% if !current_user.admin? %> Your <% else %> All <% end %> Applications
                     </th>
                   </tr>
                 </thead>
