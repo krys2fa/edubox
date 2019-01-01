@@ -28,8 +28,20 @@ class DashboardController < ApplicationController
 
         # Institutions section
         @institutions_count = Institution.count
-        @applications_per_institutions = Institution.left_joins(:applications).
-        distinct.select('institutions.name, COUNT(applications.*) AS applications_count' ).group('institutions.id')
+
+        if current_user.admin?
+
+            @applications_per_institutions = Institution.left_joins(:applications).
+            distinct.select('institutions.name, COUNT(applications.*) AS applications_count' ).group('institutions.id')
+
+        else
+
+            @user_id = current_user.id
+            @applications_per_institutions = Institution.left_joins(:applications).
+            distinct.select('institutions.name, COUNT(applications.*) AS applications_count' ).
+            where('applications.user_id = ?', @user_id).group('institutions.id')
+
+        end
 
         # Documents section
         @documents_count = Document.count

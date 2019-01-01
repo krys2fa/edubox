@@ -89,7 +89,7 @@
                 <thead>
                   <tr>
                     <th colspan="2">
-                      Institutions with Processed Applications
+                      Institutions with <% if !current_user.admin? %> Your <% end %> Processed Applications
                     </th>
                   </tr>
                 </thead>
