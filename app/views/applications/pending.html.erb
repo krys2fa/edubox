@@ -1,0 +1,52 @@
+<%= render :partial => "layouts/shared/sidebar" %>
+
+<div class="column" id="content">
+  <div class="ui grid">
+    <%= render :partial => "layouts/shared/notice"%>
+    <div class="row">
+      <h1 class="ui huge header">
+        Pending Applications
+      </h1>
+    </div>
+
+      <div class="ui divider"></div>
+
+      <br />
+
+
+    <div class="row">
+            <table class="ui single line striped selectable table">
+            <thead>
+                <tr>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    Processed
+                </th>
+                <th colspan="3">
+                    
+                </th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <% @applications.each do |application| %>
+                <tr>
+                    <td><%= application.firstname %></td>
+                    <td><%= application.lastname %></td>
+                    <td><%= application.processed %></td>
+                    <td><%= link_to '<i class="eye icon"></i>View'.html_safe, application, class: "ui basic button" %></td>
+                    <td><%= link_to '<i class="edit outline icon"></i>Edit'.html_safe, edit_application_path(application), class: "ui basic button" %></td>
+                    <td><%= link_to '<i class="trash icon"></i>Delete'.html_safe, application, method: :delete, data: { confirm: 'Are you sure?' }, class: "negative ui button" %></td>
+                </tr>
+                <% end %>
+            </tbody>
+            </table>
+        </div>
+
+
+        <br>
