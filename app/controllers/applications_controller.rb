@@ -15,7 +15,9 @@ class ApplicationsController < ApplicationController
   # GET /applications/1
   # GET /applications/1.json
   def show
-    @document = Document.find(params[:id]).name
+    #@document = Document.find(params[:id]).name
+    @document_id = @application.document_id
+    @document = Document.find_by_id(@document_id).name
   end
 
   # GET /applications/new
