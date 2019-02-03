@@ -55,6 +55,16 @@
       </div>
 
       <div class="item">
+        <strong>Copy of Student ID:</strong>
+        <%= image_tag @application.student_id.url %>
+      </div>
+
+      <div class="item">
+        <strong>Copy of Acceptance Letter:</strong>
+        <%= image_tag @application.acceptance_letter.url %>
+      </div>
+
+      <div class="item">
         <strong>Department:</strong>
         <%= @application.department %>
       </div>

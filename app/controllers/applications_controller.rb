@@ -88,6 +88,6 @@ class ApplicationsController < ApplicationController
       params.require(:application).permit(:firstname, :lastname, :dob, :enrolled, 
                                           :completed, :express, :document_id, :quantity, :studentid, 
                                           :department, :college, :school, :phone, :programme, :institution_id,
-                                          :address, :reason, :type, :processed)
+                                          :address, :reason, :type, :processed, :acceptance_letter, :student_id)
     end
 end

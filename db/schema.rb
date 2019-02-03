@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181229125349) do
+ActiveRecord::Schema.define(version: 20190202203026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20181229125349) do
     t.bigint "user_id"
     t.boolean "delivered", default: false
     t.bigint "institution_id"
+    t.string "acceptance_lttr_img"
+    t.string "student_id_img"
+    t.string "acceptance_letter_file_name"
+    t.string "acceptance_letter_content_type"
+    t.integer "acceptance_letter_file_size"
+    t.datetime "acceptance_letter_updated_at"
+    t.string "student_id_file_name"
+    t.string "student_id_content_type"
+    t.integer "student_id_file_size"
+    t.datetime "student_id_updated_at"
     t.index ["document_id"], name: "index_applications_on_document_id"
     t.index ["institution_id"], name: "index_applications_on_institution_id"
     t.index ["user_id"], name: "index_applications_on_user_id"
