@@ -38,77 +38,11 @@
             </div>
           </div>
 
-
           <div class="equal width fields">
-
-            <div class="field">
-              <%= form.label :enrolled %>
-              <%= form.text_field :enrolled, id: :application_enrolled %>
-            </div>
-
-             <div class="field">
-              <%= form.label :completed %>
-              <%= form.text_field :completed, id: :application_completed%>
-            </div>
-
-          </div>
-
-
-          <div class="equal width fields">
-            <div class="field">
-              <%= form.label :quantity %>
-              <%= form.number_field :quantity, id: :application_quantity %>
-            </div>
-
-            <div class="field">
-              <%= form.label :document_id %>
-              <%= form.collection_select :document_id, Document.order(:name),:id,:name, include_blank: true%>
-              <%#= form.number_field :quantity, id: :application_quantity %>
-            </div>
-
-            <div class="field">
-              <%= form.label :express %>
-              <%= form.check_box :express, id: :application_express%>
-            </div>
-
-          </div>
-
-
-          <div class="equal width fields">
-
-            <div class="field">
-              <%#= form.label :studentid %>
-              <label>Student ID: </label>
-              <%= form.file_field :student_id, :class => 'form-control' %>
-            </div>
-
-            <div class="field">
-              <%#= form.label :studentid %>
-              <label>Acceptance Letter: </label>
-              <%= form.file_field :acceptance_letter, :class => 'form-control' %>
-            </div>
-
-            <div class="field">
-              <%#= form.label :phone %>
-              <label>Phone Number: </label>
-              <%= form.text_field :phone, id: :application_phone, :class => 'form-control' %>
-            </div>
 
             <div class="field">
               <%= form.label :programme %>
               <%= form.text_field :programme, id: :application_programme, :class => 'form-control' %>
-            </div>
-
-          </div>
-
-           <div class="equal width fields">
-
-            <div class="field">
-              <%#= form.label :school %>
-              <%#= form.text_field :school, id: :application_school, :class => 'form-control' %>
-
-              <%= form.label :institution_id %>
-              <%= form.collection_select :institution_id, Institution.order(:name),:id,:name, include_blank: true%>
             </div>
 
             <div class="field">
@@ -125,15 +59,111 @@
 
           </div>
 
-        <div class="field">
-          <%= form.label :address %>
-          <%= form.text_area :address, id: :application_address, :class => 'form-control' %>
-        </div>
 
-        <div class="field">
-          <%= form.label :reason %>
-          <%= form.text_area :reason, id: :application_reason, :class => 'form-control' %>
-        </div>
+          <div class="equal width fields">
+
+            <div class="field">
+              <%= form.label :enrolled, 'Date of enrollment' %>
+              <%= form.text_field :enrolled, id: :application_enrolled %>
+            </div>
+
+             <div class="field">
+              <%= form.label :completed, 'Date of Completion' %>
+              <%= form.text_field :completed, id: :application_completed%>
+            </div>
+
+          </div>
+
+
+          <div class="equal width fields">
+            
+
+            <div class="field">
+              <%#= form.label :school %>
+              <%#= form.text_field :school, id: :application_school, :class => 'form-control' %>
+
+              <%= form.label :institution_id, 'Institution Attended' %>
+              <%= form.collection_select :institution_id, Institution.order(:name),:id,:name, include_blank: true%>
+            </div>
+
+            <div class="field">
+              <%= form.label :document_id, 'Requested Document' %>
+              <%= form.collection_select :document_id, Document.order(:name),:id,:name, include_blank: true%>
+              <%#= form.number_field :quantity, id: :application_quantity %>
+            </div>
+
+            <div class="field">
+              <%= form.label :express, 'Express Application?' %>
+              <%#= form.check_box :express, id: :application_express%>
+              <%= form.label :express, 'Yes', :value => true %>
+              <%= form.radio_button :express, true %>
+
+              <%= form.label :express, 'No', :value => false %>
+              <%= form.radio_button :express, false, :checked => true %>
+            </div>
+
+          </div>
+
+
+          <div class="equal width fields">
+
+            <!--<div class="field">
+              <%#= form.label :studentid %>
+              <label>Student ID: </label>
+              <%#= form.file_field :student_id, :class => 'form-control' %>
+            </div>
+
+            <div class="field">
+              <%#= form.label :studentid %>
+              <label>Acceptance Letter: </label>
+              <%#= form.file_field :acceptance_letter, :class => 'form-control' %>
+            </div> -->
+
+            <div class="field">
+              <%#= form.label :phone %>
+              <label>Phone Number: </label>
+              <%= form.text_field :phone, id: :application_phone, :class => 'form-control' %>
+            </div>
+
+            <div class="field">
+              <%= form.label :quantity %>
+              <%= form.number_field :quantity, id: :application_quantity %>
+            </div>
+
+          </div>
+
+          <div class="equal width fields">
+
+            <div class="field">
+              <%#= form.label :studentid %>
+              <label>Upload Student ID: </label>
+              <%= form.file_field :student_id, :class => 'form-control' %>
+            </div>
+
+            <div class="field">
+              <%#= form.label :studentid %>
+              <label>Upload Acceptance Letter: </label>
+              <%= form.file_field :acceptance_letter, :class => 'form-control' %>
+            </div>
+
+          </div>
+
+           
+
+          <div class="field">
+            <label>Residential Address:</label>
+            <%= form.text_area :address, id: :application_address, :class => 'form-control' %>
+          </div>
+
+          <div class="field">
+            <label>Delivery Address:</label>
+            <%= form.text_area :address, id: :application_address, :class => 'form-control' %>
+          </div>
+
+          <div class="field">
+            <label>Reason(s) for Request:</label>
+            <%= form.text_area :reason, id: :application_reason, :class => 'form-control' %>
+          </div>
 
 
           <%= form.submit 'Submit Application', :class => "ui submit button primary large" %>
