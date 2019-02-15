@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190202203026) do
+ActiveRecord::Schema.define(version: 20190215172752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20190202203026) do
     t.string "student_id_content_type"
     t.integer "student_id_file_size"
     t.datetime "student_id_updated_at"
+    t.float "longitude"
+    t.float "latitude"
     t.index ["document_id"], name: "index_applications_on_document_id"
     t.index ["institution_id"], name: "index_applications_on_institution_id"
     t.index ["user_id"], name: "index_applications_on_user_id"

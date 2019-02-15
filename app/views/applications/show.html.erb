@@ -4,7 +4,7 @@
     <%= render :partial => "layouts/shared/notice" %>
     <div class="row">
       <h1 class="ui huge header">
-        View Application
+        View Request
       </h1>
     </div>
     <div class="ui divider"></div>
@@ -93,6 +93,7 @@
       <div class="item">
         <strong>Address:</strong>
         <%= @application.address %>
+        <!--<p>Coordinates: <%#= @application.latitude %> <%#= @application.longitude %></p> -->
       </div>
 
       <div class="item">
@@ -107,7 +108,7 @@
   </div>
   
 
-  <%= link_to 'Edit Applications', edit_application_path(@application), class: "ui large button" %> |
-  <%= link_to 'All Applications', applications_path , class: "ui large button" %>
+  <%= link_to 'Edit Request', edit_application_path(@application), class: "ui large button" %> |
+  <%= link_to 'All Requests', applications_path , class: "ui large button" %>
 
 </div>

@@ -23,6 +23,7 @@ class ApplicationsController < ApplicationController
   # GET /applications/new
   def new
     @application = current_user.applications.new
+    @regions = CS.states(:gh)
   end
 
   # GET /applications/1/edit
@@ -81,6 +82,7 @@ class ApplicationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_application
       @application = Application.find(params[:id])
+      
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -88,6 +90,6 @@ class ApplicationsController < ApplicationController
       params.require(:application).permit(:firstname, :lastname, :dob, :enrolled, 
                                           :completed, :express, :document_id, :quantity, :studentid, 
                                           :department, :college, :school, :phone, :programme, :institution_id,
-                                          :address, :reason, :type, :processed, :acceptance_letter, :student_id)
+                                          :address, :reason, :type, :processed, :acceptance_letter, :student_id, :longitude, :latitude)
     end
 end

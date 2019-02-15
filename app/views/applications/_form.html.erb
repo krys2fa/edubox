@@ -1,7 +1,7 @@
 <!-- <div class="card card-login mx-auto mt-5"> -->
-<div class="container">
+<!--<div class="container"> -->
 
-  <div class="row">
+ <!-- <div class="row"> -->
   <!--<div class="card-body">-->
       <%= form_with(model: application, local: true , html: { multipart: true })  do |form| %>
         <% if application.errors.any? %>
@@ -34,7 +34,7 @@
             <div class="field">
               <%#= form.label :dob %>
               <label>Date of Birth:</label>
-              <%= form.text_field :dob, id: :application_dob %>
+              <%= form.text_field :dob, id: :application_dob, :class => 'form-control'  %>
             </div>
           </div>
 
@@ -63,13 +63,13 @@
           <div class="equal width fields">
 
             <div class="field">
-              <%= form.label :enrolled, 'Date of enrollment' %>
-              <%= form.text_field :enrolled, id: :application_enrolled %>
+              <%= form.label :enrolled, 'Date of enrolment' %>
+              <%= form.text_field :enrolled, id: :application_enrolled, :class => 'form-control' %>
             </div>
 
              <div class="field">
               <%= form.label :completed, 'Date of Completion' %>
-              <%= form.text_field :completed, id: :application_completed%>
+              <%= form.text_field :completed, id: :application_completed, :class => 'form-control'%>
             </div>
 
           </div>
@@ -149,16 +149,24 @@
           </div>
 
            
-
+          <!--
           <div class="field">
             <label>Residential Address:</label>
             <%= form.text_area :address, id: :application_address, :class => 'form-control' %>
           </div>
+          -->
 
           <div class="field">
             <label>Delivery Address:</label>
             <%= form.text_area :address, id: :application_address, :class => 'form-control' %>
           </div>
+
+          <!--
+          <div class="field">
+            <label>Region of Delivery Address:</label>
+            <%#= form.collection_select :region, @regions, :first, :last, :class => 'form-control' %>
+          </div>
+          -->
 
           <div class="field">
             <label>Reason(s) for Request:</label>
@@ -166,11 +174,11 @@
           </div>
 
 
-          <%= form.submit 'Submit Application', :class => "ui submit button primary large" %>
+          <%= form.submit 'Submit Request', :class => "ui submit button primary large" %>
 
         </div>
       <% end %>
 
-  </div>    
+ <!-- </div> -->   
 
-</div>
+<!--</div>-->
