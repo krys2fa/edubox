@@ -50,11 +50,13 @@
               <%= form.text_field :department, id: :application_department, :class => 'form-control' %>
             </div>
 
+
+            <!--
             <div class="field">
               <%= form.label :college %>
               <%= form.text_field :college, id: :application_college, :class => 'form-control' %>
             </div>
-
+            -->
             
 
           </div>
@@ -95,11 +97,19 @@
             <div class="field">
               <%= form.label :express, 'Express Application?' %>
               <%#= form.check_box :express, id: :application_express%>
-              <%= form.label :express, 'Yes', :value => true %>
-              <%= form.radio_button :express, true %>
+              <%#= form.label :express, 'Yes', :value => true%>
+              <%= form.radio_button :express, true , :class => 'radio-inline'%> <b>Yes</b> &nbsp;
 
-              <%= form.label :express, 'No', :value => false %>
-              <%= form.radio_button :express, false, :checked => true %>
+              <%#= form.radio_button :express, label: true, as: :radio_buttons, 
+                item_label_class: "radio-inline", item_wrapper_tag: false %>
+
+              <%#= form.label :express, 'No', :value => false %>
+              <%= form.radio_button :express, false, :checked => true, :class => 'radio-inline' %> <b>No</b>
+
+               
+
+              <%#= form.radio_button :express, label: false, as: :radio_buttons, 
+                item_label_class: "radio-inline", item_wrapper_tag: false %> 
             </div>
 
           </div>

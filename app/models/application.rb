@@ -3,7 +3,7 @@ class Application < ApplicationRecord
   belongs_to :user
   belongs_to :institution
   validates :firstname, :lastname, :dob, :enrolled, :completed, 
-  			:quantity, :department, :college, :phone, :institution_id,
+  			:quantity, :department, :phone, :institution_id,
         :programme, :address, :reason, :presence => true
 
   has_attached_file :student_id,  :default_url => "/images/:style/missing.png"
