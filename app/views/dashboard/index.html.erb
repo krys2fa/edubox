@@ -85,12 +85,13 @@
 
               </div>
 
-              <table class="ui small very compact unstackable selectable olive striped table">
+              <table class="ui small very compact unstackable selectable olive striped table" id="institutions">
                 <thead>
                   <tr>
-                    <th colspan="2">
+                    <th>
                       Institutions with <% if !current_user.admin? %> Your <% end %> Processed Applications
                     </th>
+                    <th>Count</th>
                   </tr>
                 </thead>
 
@@ -100,7 +101,7 @@
                     
                     <tr>
                       <td><%= applications_per_institution.name %></td>
-                      <td class="right aligned"><%= applications_per_institution.applications_count %></td>
+                      <td ><%= applications_per_institution.applications_count %></td>
                     </tr>
 
                   <% end %>
