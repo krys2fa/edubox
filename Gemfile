@@ -36,7 +36,7 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'hirb'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'jquery-rails'
-gem "ffi", ">= 1.9.24"
+gem "ffi", "~> 1.9.24"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,7 +60,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'rails_admin'
 gem 'jquery-ui-rails', '5.0.5'
-gem 'paperclip', '~> 5.0.0'
+gem 'paperclip', '~> 5.2.0'
 gem 'city-state'
 gem 'geocoder'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
