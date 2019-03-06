@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Programmes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @programmes.each do |programme| %>
+      <tr>
+        <td><%= link_to 'Show', programme %></td>
+        <td><%= link_to 'Edit', edit_programme_path(programme) %></td>
+        <td><%= link_to 'Destroy', programme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Programme', new_programme_path %>

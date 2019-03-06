@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :programmes
+  resources :colleges
+  resources :faculties
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users

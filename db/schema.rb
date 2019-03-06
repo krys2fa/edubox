@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190215172752) do
+ActiveRecord::Schema.define(version: 20190306140936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,10 +55,26 @@ ActiveRecord::Schema.define(version: 20190215172752) do
     t.index ["user_id"], name: "index_applications_on_user_id"
   end
 
+  create_table "colleges", force: :cascade do |t|
+    t.text "name"
+    t.bigint "institution_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["institution_id"], name: "index_colleges_on_institution_id"
+  end
+
   create_table "documents", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "faculties", force: :cascade do |t|
+    t.text "name"
+    t.bigint "institution_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["institution_id"], name: "index_faculties_on_institution_id"
   end
 
   create_table "institutions", force: :cascade do |t|
@@ -67,6 +83,16 @@ ActiveRecord::Schema.define(version: 20190215172752) do
     t.text "contact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "programmes", force: :cascade do |t|
+    t.text "name"
+    t.bigint "college_id"
+    t.bigint "faculty_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["college_id"], name: "index_programmes_on_college_id"
+    t.index ["faculty_id"], name: "index_programmes_on_faculty_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -95,4 +121,8 @@ ActiveRecord::Schema.define(version: 20190215172752) do
   add_foreign_key "applications", "documents"
   add_foreign_key "applications", "institutions"
   add_foreign_key "applications", "users"
+  add_foreign_key "colleges", "institutions"
+  add_foreign_key "faculties", "institutions"
+  add_foreign_key "programmes", "colleges"
+  add_foreign_key "programmes", "faculties"
 end

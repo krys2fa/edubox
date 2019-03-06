@@ -1,0 +1,28 @@
+<%= render :partial => "layouts/shared/sidebar" %>
+<div class="column" id="content">
+  <div class="ui ">
+    <%= render :partial => "layouts/shared/notice" %>
+    <div class="row">
+      <h1 class="ui huge header">
+        View College
+      </h1>
+    </div>
+    <div class="ui divider"></div>
+    <br />
+
+    <div class="item">
+      <strong>Name:</strong>
+      <%= @college.name %>
+    </div>
+
+    <div class="item">
+      <strong>Institution:</strong>
+      <%= Institution.find(@college.institution_id).name %>
+    </div>
+
+    
+    <br />
+<% if current_user.admin? %>
+  <%= link_to 'Edit College', edit_college_path(@college), class: "ui large button" %> |
+<% end %>
+<%= link_to 'All Colleges', faculties_path, class: "ui large button" %>

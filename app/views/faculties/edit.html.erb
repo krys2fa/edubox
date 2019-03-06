@@ -1,0 +1,21 @@
+<%= render :partial => "layouts/shared/sidebar" %>
+<div class="column" id="content">
+  <div class="ui grid">
+    <%= render :partial => "layouts/shared/notice" %>
+    <div class="row">
+      <h1 class="ui huge header">
+        Editing Faculty 
+      </h1>
+    </div>
+    <div class="ui divider"></div>
+
+    <div class="row">
+
+        <%= render 'form', faculty: @faculty %>
+
+    </div>
+  </div>
+</div>
+
+<%= link_to 'View Faculty', @faculty, class: "ui basic button" %> |
+<%= link_to 'All Faculties', faculties_path, class: "ui basic button" %>

@@ -1,0 +1,56 @@
+
+<%= render :partial => "layouts/shared/sidebar" %>
+
+<div class="column" id="content">
+  <div class="ui grid">
+  <%= render :partial => "layouts/shared/notice"%>
+    <div class="row">
+      <h1 class="ui huge header">
+        All Colleges
+      </h1>
+    </div>
+    <div class="ui divider"></div>
+
+    <div class="row">
+    <table class="ui single line striped selectable table">
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+         
+          <th>
+            Name of Institution
+          </th>
+
+          <th colspan="3">
+            
+          </th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% @colleges.each do |college| %>
+          <tr>
+            <td><%= college.name %></td>
+            <td><%= college.mother_institution(college.institution_id) %></td>
+            <td><%= link_to '<i class="eye icon"></i>View'.html_safe, college, class: "ui basic button" %></td>
+            <td><%= link_to '<i class="edit outline icon"></i>Edit'.html_safe, edit_college_path(college), class: "ui basic button" %></td>
+            <td><%= link_to '<i class="trash icon"></i>Delete'.html_safe, college, method: :delete, data: { confirm: 'Are you sure?' }, class: "negative ui button" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+
+<br>
+
+<%= link_to '<i class="plus circle icon"></i>New College'.html_safe, new_college_path, class: "positive ui button" %>
+
+
+
+     
+
+
+

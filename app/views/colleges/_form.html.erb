@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div class="row">
+
+
+<%= form_with(model: college, local: true) do |form| %>
+  <% if college.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(college.errors.count, "error") %> prohibited this college from being saved:</h2>
+
+      <ul>
+      <% college.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+        <div class="ui large form">
+          <div class='equal width fields'>
+
+            <div class="field">
+              <%= form.label :name %>
+              <%= form.text_field :name, id: :college_name, :class => 'form-control' %>
+            </div>
+
+            <div class="field">
+              <%= form.label :institution_id %>
+              <%= form.collection_select(:institution_id, Institution.all, :id, :name, :class => 'form-control') %>
+            </div>
+
+
+            
+
+          </div>
+            <%= form.submit 'Submit College', :class => "ui submit button primary large" %>
+        </div>
+<% end %>
+
+
