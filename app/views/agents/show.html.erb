@@ -1,0 +1,81 @@
+<%= render :partial => "layouts/shared/sidebar" %>
+<div class="column" id="content">
+  <div class="ui ">
+    <%= render :partial => "layouts/shared/notice" %>
+    <div class="row">
+      <h1 class="ui huge header">
+        View Agent
+      </h1>
+    </div>
+    <div class="ui divider"></div>
+    <br />
+
+    <div class="item">
+      <strong>Username:</strong>
+      <%=  @agent.username  %>
+    </div>
+
+    <div class="item">
+      <strong>Full Name:</strong>
+      <%= @agent.try(:firstname) + ' ' + @agent.try(:lastname) %>
+    </div>
+
+    <div class="item">
+      <strong>Email:</strong>
+      <%= @agent.email %>
+    </div>
+
+    <div class="item">
+      <strong>Phone:</strong>
+      <%= @agent.phone %>
+    </div>
+
+    <div class="item">
+      <strong>Sign Up Date:</strong>
+      <%= @agent.created_at %>
+    </div>
+
+    <div class="item">
+      <strong>Last Sign In Date:</strong>
+      <%= @agent.last_sign_in_at %>
+    </div>
+
+    <div class="item">
+      <strong>Number of Requests:</strong>
+      <%= @agent.applications.count %>
+    </div>
+
+    <div class="item">
+      <strong>Number of Pending Requests:</strong>
+      <%= @agent.applications.where(processed: false).count %>
+    </div>
+
+     <div class="item">
+      <strong>Number of Delivered Requests:</strong>
+      <%= @agent.applications.where(delivered: true).count %>
+    </div>
+
+
+    <div class="item">
+      <strong>Number of Assigned Requests:</strong>
+      <%= @agent.applications.count %>
+    </div>
+
+    <div class="item">
+      <strong>Number of Assigned Requests Pending:</strong>
+      <%= @agent.applications.where(processed: false).count %>
+    </div>
+
+     <div class="item">
+      <strong>Number of Assigned Requests Delivered:</strong>
+      <%= @agent.applications.where(delivered: true).count %>
+    </div>
+
+
+
+    <br />
+<% if current_user.admin? %>
+  <%#= link_to 'Edit Institution', edit_institution_path(@institution), class: "ui large button" %> |
+<% end %>
+<%= link_to 'All agents', agents_path, class: "ui large button" %>
+

@@ -1,0 +1,64 @@
+<%= render :partial => "layouts/shared/sidebar" %>
+<div class="column" id="content">
+  <div class="ui ">
+    <%= render :partial => "layouts/shared/notice" %>
+    <div class="row">
+      <h1 class="ui huge header">
+        View Customer
+      </h1>
+    </div>
+    <div class="ui divider"></div>
+    <br />
+
+    <div class="item">
+      <strong>Username:</strong>
+      <%=  @customer.username  %>
+    </div>
+
+    <div class="item">
+      <strong>Full Name:</strong>
+      <%= @customer.try(:firstname) + ' ' + @customer.try(:lastname) %>
+    </div>
+
+    <div class="item">
+      <strong>Email:</strong>
+      <%= @customer.email %>
+    </div>
+
+    <div class="item">
+      <strong>Phone:</strong>
+      <%= @customer.phone %>
+    </div>
+
+    <div class="item">
+      <strong>Sign Up Date:</strong>
+      <%= @customer.created_at %>
+    </div>
+
+    <div class="item">
+      <strong>Last Sign In Date:</strong>
+      <%= @customer.last_sign_in_at %>
+    </div>
+
+    <div class="item">
+      <strong>Number of Requests:</strong>
+      <%= @customer.applications.count %>
+    </div>
+
+    <div class="item">
+      <strong>Number of Pending Requests:</strong>
+      <%= @customer.applications.where(processed: false).count %>
+    </div>
+
+     <div class="item">
+      <strong>Number of Delivered Requests:</strong>
+      <%= @customer.applications.where(delivered: true).count %>
+    </div>
+
+
+
+    <br />
+<% if current_user.admin? %>
+  <%#= link_to 'Edit Institution', edit_institution_path(@institution), class: "ui large button" %> |
+<% end %>
+<%= link_to 'All Customers', customers_path, class: "ui large button" %>

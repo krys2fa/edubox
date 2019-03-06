@@ -14,7 +14,10 @@
       <table class="ui single line striped selectable table">
         <thead>
           <tr>
-            <th>Agent Email</th>
+            <th>Agent Name</th>
+            <th>Agent Phone</th>
+            <th>Agent Last Login Time</th>
+            <!--<th>Agent Processed Applications</th> -->
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -22,11 +25,14 @@
         <tbody>
           <% @agents.each do |agent| %>
             <tr>
-              <td><%= agent.email %></td>
-              <td><%= link_to '<i class="eye icon"></i>View'.html_safe, agent, class: "ui basic button" %></td>
+              <td><%= agent.firstname + ' ' + agent.lastname %></td>
+              <td><%= agent.phone %></td>
+              <td><%= agent.last_sign_in_at %></td>
+              <td><%#= agent.applications.where(processed: true, user_id: params[:id]) %></td>
+              <td><%= link_to '<i class="eye icon"></i>View'.html_safe, agent_path(agent), class: "ui basic button" %></td>
               <% if current_user.admin? %>
-                <td><%= link_to '<i class="edit outline icon"></i>Edit'.html_safe, edit_document_path(agent), class: "ui basic button" %></td>
-                <td><%= link_to '<i class="trash icon"></i>Delete'.html_safe, agent, method: :delete, data: { confirm: 'Are you sure?' }, class: "negative ui button" %></td>
+                <td><%#= link_to '<i class="edit outline icon"></i>Edit'.html_safe, edit_document_path(agent), class: "ui basic button" %></td>
+                <td><%#= link_to '<i class="trash icon"></i>Delete'.html_safe, agent, method: :delete, data: { confirm: 'Are you sure?' }, class: "negative ui button" %></td>
               <% end %>
             </tr>
           <% end %>
