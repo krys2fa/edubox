@@ -1,8 +1,4 @@
-<!-- <div class="card card-login mx-auto mt-5"> -->
-<!--<div class="container"> -->
 
- <!-- <div class="row"> -->
-  <!--<div class="card-body">-->
       <%= form_with(model: application, local: true , html: { multipart: true })  do |form| %>
         <% if application.errors.any? %>
           <div id="error_explanation">
@@ -19,20 +15,17 @@
         <div class="ui large form">
           <div class='equal width fields'>
             <div class="field">
-              <%#= form.label :firstname %>
               <label>First Name</label>
               <%= form.text_field :firstname, id: :application_firstname%>
             </div>
         
 
             <div class="field">
-              <%#= form.label :lastname %>
               <label>Last Name</label>
               <%= form.text_field :lastname, id: :application_lastname %>
             </div>
 
             <div class="field">
-              <%#= form.label :dob %>
               <label>Date of Birth:</label>
               <%= form.text_field :dob, id: :application_dob, :class => 'form-control'  %>
             </div>
@@ -93,31 +86,16 @@
 
 
           <div class="equal width fields">
-            
-
 
             <div class="field">
               <%= form.label :document_id, 'Requested Document' %>
               <%= form.collection_select :document_id, Document.order(:name),:id,:name, include_blank: true%>
-              <%#= form.number_field :quantity, id: :application_quantity %>
             </div>
 
             <div class="field">
               <%= form.label :express, 'Express Application?' %>
-              <%#= form.check_box :express, id: :application_express%>
-              <%#= form.label :express, 'Yes', :value => true%>
               <%= form.radio_button :express, true , :class => 'radio-inline'%> <b>Yes</b> &nbsp;
-
-              <%#= form.radio_button :express, label: true, as: :radio_buttons, 
-                item_label_class: "radio-inline", item_wrapper_tag: false %>
-
-              <%#= form.label :express, 'No', :value => false %>
               <%= form.radio_button :express, false, :checked => true, :class => 'radio-inline' %> <b>No</b>
-
-               
-
-              <%#= form.radio_button :express, label: false, as: :radio_buttons, 
-                item_label_class: "radio-inline", item_wrapper_tag: false %> 
             </div>
 
           </div>
@@ -126,7 +104,6 @@
           <div class="equal width fields">
 
             <div class="field">
-              <%#= form.label :phone %>
               <label>Phone Number: </label>
               <%= form.text_field :phone, id: :application_phone, :class => 'form-control' %>
             </div>
@@ -141,13 +118,11 @@
           <div class="equal width fields">
 
             <div class="field">
-              <%#= form.label :studentid %>
               <label>Upload Student ID: </label>
               <%= form.file_field :student_id, :class => 'form-control' %>
             </div>
 
             <div class="field">
-              <%#= form.label :studentid %>
               <label>Upload Acceptance Letter: </label>
               <%= form.file_field :acceptance_letter, :class => 'form-control' %>
             </div>
@@ -184,7 +159,3 @@
 
         </div>
       <% end %>
-
- <!-- </div> -->   
-
-<!--</div>-->
