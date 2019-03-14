@@ -5,5 +5,7 @@ class Institution < ApplicationRecord
     has_many :programmes, :through => :faculties
     has_many :programmes, through: :colleges
 
+    validates_presence_of :name
+
 
 end
