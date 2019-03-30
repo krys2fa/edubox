@@ -87,7 +87,7 @@ class ApplicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def application_params
-      params.require(:application).permit(:firstname, :lastname, :dob, :enrolled, 
+      params.require(:application).permit(:firstname, :lastname, :dob, :enrolled, :college_id, :faculty_id,
                                           :completed, :express, :document_id, :quantity, :studentid, 
                                           :department, :college, :school, :phone, :programme, :institution_id,
                                           :address, :reason, :type, :processed, :acceptance_letter, :student_id, :longitude, :latitude)
