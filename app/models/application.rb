@@ -6,10 +6,10 @@ class Application < ApplicationRecord
   			:quantity, :department, :phone, :institution_id,
         :programme, :address, :reason, :presence => true
 
-  has_attached_file :student_id,  :default_url => "/images/:style/missing.png"
+  has_attached_file :student_id, :styles => { :thumb => "150x150>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :student_id, :content_type => /\Aimage\/.*\Z/
 
-  has_attached_file :acceptance_letter,  :default_url => "/images/:style/missing.png"
+  has_attached_file :acceptance_letter, :styles => { :thumb => "150x150>" },  :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :acceptance_letter, :content_type => /\Aimage\/.*\Z/
 
   geocoded_by :full_address

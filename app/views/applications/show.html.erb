@@ -55,13 +55,17 @@
       </div>
 
       <div class="item">
-        <strong>Copy of Student ID:</strong>
-        <%= image_tag @application.student_id.url %>
+        <div class="ui large image">
+          <strong>Copy of Student ID:</strong>
+          <%= image_tag @application.student_id.url(:thumb)  %>
+        </div>
       </div>
 
       <div class="item">
-        <strong>Copy of Acceptance Letter:</strong>
-        <%= image_tag @application.acceptance_letter.url %>
+        <div class="ui large image">
+          <strong>Copy of Acceptance Letter:</strong>
+          <%= image_tag @application.acceptance_letter.url(:thumb) %>
+        </div>
       </div>
 
       <div class="item">
