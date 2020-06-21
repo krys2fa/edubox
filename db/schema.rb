@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190306140936) do
+ActiveRecord::Schema.define(version: 20200621112736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,12 +34,9 @@ ActiveRecord::Schema.define(version: 20190306140936) do
     t.boolean "processed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "document_id"
     t.bigint "user_id"
     t.boolean "delivered", default: false
     t.bigint "institution_id"
-    t.string "acceptance_lttr_img"
-    t.string "student_id_img"
     t.string "acceptance_letter_file_name"
     t.string "acceptance_letter_content_type"
     t.integer "acceptance_letter_file_size"
@@ -50,7 +47,7 @@ ActiveRecord::Schema.define(version: 20190306140936) do
     t.datetime "student_id_updated_at"
     t.float "longitude"
     t.float "latitude"
-    t.index ["document_id"], name: "index_applications_on_document_id"
+    t.integer "document"
     t.index ["institution_id"], name: "index_applications_on_institution_id"
     t.index ["user_id"], name: "index_applications_on_user_id"
   end
@@ -118,7 +115,6 @@ ActiveRecord::Schema.define(version: 20190306140936) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "applications", "documents"
   add_foreign_key "applications", "institutions"
   add_foreign_key "applications", "users"
   add_foreign_key "colleges", "institutions"
