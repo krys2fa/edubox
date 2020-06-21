@@ -7,7 +7,7 @@
     <meta content="PPType" name="author" />
     <meta content="#ffffff" name="theme-color" />
     <title>Edubox</title>
-  
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -64,8 +64,10 @@ $(document)
     <div class="ui center aligned grid">
       <div class="ui container">
         <h1 class="ui huge header">
-          Please sign in 
+          Please sign in
         </h1>
+
+        <%= render 'layouts/shared/notice' %>
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'ui large form'}) do |f| %>
           <div class="field">
@@ -74,14 +76,14 @@ $(document)
                   <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "E-mail address" %>
                 </div>
           </div>
-  
+
           <div class="field">
             <div class="ui left icon input">
               <i class="lock icon"></i>
               <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
             </div>
           </div>
-        
+
           <% if devise_mapping.rememberable? -%>
             <div class="field">
               <div class="ui checkbox">
@@ -90,11 +92,11 @@ $(document)
               </div>
             </div>
           <% end -%>
-        
+
             <%= f.submit "Log in", :class => "ui fluid large primary submit button" %>
-  
+
      <% end %>
-    
+
     <%= render "devise/shared/links" %>
 
 
@@ -102,13 +104,13 @@ $(document)
   </div>
 
 
-  
+
 
   <style type="text/css">
     body {
       background-color: #eee;
     }
-    
+
     .ui.container {
       margin-top: 6em;
       max-width: 22em !important;
