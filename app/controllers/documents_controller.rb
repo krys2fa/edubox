@@ -5,6 +5,9 @@ class DocumentsController < ApplicationController
   # GET /documents.json
   def index
     @documents = Document.all
+
+    flash.now[:success] = "We currently have #{@documents.size} "\
+                          "types of documents you can request for!"
   end
 
   # GET /documents/1
@@ -28,7 +31,7 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       if @document.save
-        format.html { redirect_to @document, notice: 'Document was successfully created.' }
+        format.html { redirect_to @document, success: 'Document was successfully created.' }
         format.json { render :show, status: :created, location: @document }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class DocumentsController < ApplicationController
   def update
     respond_to do |format|
       if @document.update(document_params)
-        format.html { redirect_to @document, notice: 'Document was successfully updated.' }
+        format.html { redirect_to @document, success: 'Document was successfully updated.' }
         format.json { render :show, status: :ok, location: @document }
       else
         format.html { render :edit }
@@ -56,7 +59,7 @@ class DocumentsController < ApplicationController
   def destroy
     @document.destroy
     respond_to do |format|
-      format.html { redirect_to documents_url, notice: 'Document was successfully destroyed.' }
+      format.html { redirect_to documents_url, success: 'Document was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
