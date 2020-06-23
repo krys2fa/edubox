@@ -1,25 +1,53 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # edubox
+
+This is an application built for alumni to use in requesting for documents from tertiary institutions in Ghana.
+
+## Built With
+
+- Ruby (Version 2.7.0)
+- Ruby on Rails (Version 5.2.4.3)
+
+## Getting Started
+[Live Demo](https://www.kipln.herokuapp.com/)
+**Click on the link above in order to see the Live Demo of the front end project.**
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+- Terminal
+- Web browser
+
+### Setup
+
+- Download repository files
+- Change directory into folder
+- Run `bundle install`.
+- Run `rails db:migrate`.
+- Run `rails server`.
+- Navigate to `http://localhost:3000/` in your browser to see the app.
+
+## Author
+
+👤 **Christopher Amanor**
+
+- Github: [@krys2fa](https://github.com/krys2fa)
+- Twitter: [@krys2fa](https://twitter.com/krys2fa)
+- Linkedin: [Christopher Amanor](https://www.linkedin.com/in/christopher-amanor/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/krys2fa/edubox/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+- Kipln
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
