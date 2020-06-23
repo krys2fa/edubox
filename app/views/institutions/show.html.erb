@@ -10,22 +10,34 @@
     <div class="ui divider"></div>
     <br />
 
-    <div class="item">
-      <strong>Name:</strong>
-      <%= @institution.name %>
-    </div>
-
-    <div class="item">
-      <strong>Location:</strong>
-      <%= @institution.location %>
-    </div>
-
-    <div class="item">
-      <strong>Contact:</strong>
-      <%= @institution.contact %>
+    <div class="ui grid">
+      <div class="sixteen wide column">
+        <div class="ui attached message ">
+          <div class="header">
+            <%= @institution.name %>
+          </div>
+        </div>
+        <div class="ui attached fluid segment">
+          <strong>Contact:</strong>
+          <%= @institution.contact %>
+        </div>
+        <div class="ui attached fluid segment">
+          <strong>Location:</strong>
+          <%= @institution.location %>
+        </div>
+      </div>
     </div>
     <br />
 <% if current_user.admin? %>
-  <%= link_to 'Edit Institution', edit_institution_path(@institution), class: "ui large button" %> |
+
+  <%= link_to edit_institution_path(@institution), class: "ui primary basic labeled icon button" do %>
+    <i class="pencil alternate icon"></i> Edit Institution
+  <% end %>
+
 <% end %>
-<%= link_to 'All Institutions', institutions_path, class: "ui large button" %>
+
+<%= link_to institutions_path, class: "ui right  labeled icon button" do %>
+  <i class="right arrow icon"></i>All Institutions
+<% end %>
+
+

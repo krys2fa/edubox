@@ -1,15 +1,15 @@
 <%= render :partial => "layouts/shared/sidebar" %>
-<div class="column" id="content">
+<div class="sixteen column" id="content">
   <div class="ui grid">
     <%= render :partial => "layouts/shared/notice" %>
     <div class="row">
       <h1 class="ui huge header">
-        Editing Institution 
+        Editing Institution
       </h1>
     </div>
     <div class="ui divider"></div>
 
-    <div class="row">
+    <div class="sixteen wide column">
 
       <%= render 'form', institution: @institution %>
 
@@ -17,7 +17,11 @@
   </div>
 </div>
 
-<%= link_to 'View Institution', @institution, class: "ui basic button" %> |
-<%= link_to 'All Institutions', institutions_path, class: "ui basic button" %>
+<%= link_to @institution, class: "ui primary basic labeled icon button" do %>
+  <i class="pencil alternate icon"></i> View Institution
+<% end %>
 
+<%= link_to institutions_path, class: "ui right labeled icon button" do %>
+  <i class="right arrow icon"></i>All Institutions
+<% end %>
 

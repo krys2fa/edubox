@@ -2,41 +2,36 @@
 
   <div class="row">
 
-
-<%= form_with(model: institution, local: true) do |form| %>
-  <% if institution.errors.any? %>
+    <%= form_with(model: institution, local: true) do |form| %>
+    <% if institution.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(institution.errors.count, "error") %> prohibited this institution from being saved:</h2>
 
       <ul>
-      <% institution.errors.full_messages.each do |message| %>
+        <% institution.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-        <div class="ui large form">
-          <div class='equal width fields'>
+    <div class="ui form">
 
-            <div class="field">
-              <%= form.label :name %>
-              <%= form.text_field :name, id: :institution_name, :class => 'form-control' %>
-            </div>
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, id: :institution_name, :class => 'form-control' %>
+      </div>
 
-            <div class="field">
-              <%= form.label :location %>
-              <%= form.text_field :location, id: :institution_location, :class => 'form-control'  %>
-            </div>
+      <div class="field">
+        <%= form.label :location %>
+        <%= form.text_field :location, id: :institution_location, :class => 'form-control'  %>
+      </div>
 
-            <div class="field">
-              <%= form.label :contact %>
-              <%= form.text_field :contact, id: :institution_contact, :class => 'form-control'  %>
-            </div>
-
-            
-
-          </div>
-            <%= form.submit 'Submit Institution', :class => "ui submit button primary large" %>
-        </div>
-<% end %>
+      <div class="field">
+        <%= form.label :contact %>
+        <%= form.text_field :contact, id: :institution_contact, :class => 'form-control'  %>
+      </div>
+      
+      <%= form.submit 'Submit Institution', :class => "ui submit button primary" %>
+    </div>
+    <% end %>

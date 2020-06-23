@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   get 'pending' => 'applications#pending'
 
 
-  root 'dashboard#index'
+  root to: 'dashboard#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
