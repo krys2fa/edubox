@@ -7,7 +7,7 @@ class DocumentsController < ApplicationController
     @documents = Document.all
 
     flash.now[:success] = "We currently have #{@documents.size} "\
-                          "types of documents that you can request for!"
+                          "types of documents available!"
   end
 
   # GET /documents/1

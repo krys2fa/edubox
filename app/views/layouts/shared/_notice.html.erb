@@ -1,6 +1,7 @@
+<% require_relative '../../../helpers/notice_helper.rb' %>
 <% flash.each do |key, value| %>
-  <div class="ui <%= key %> message">
-    <i class="close icon"></i>
-    <p><%= value %></p>
-  </div>
+     <div class="ui message <%= switch_key(key) %>">
+       <i class="close icon"></i>
+        <p> <%= value %></p>
+     </div>
 <% end %>
