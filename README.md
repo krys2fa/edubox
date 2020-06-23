@@ -8,8 +8,8 @@ This is an application built for alumni to use in requesting for documents from 
 - Ruby on Rails (Version 5.2.4.3)
 
 ## Getting Started
-[Live Demo](https://www.kipln.herokuapp.com/)
-**Click on the link above in order to see the Live Demo of the front end project.**
+
+Click on **[this link](https://www.kipln.herokuapp.com/)** in order to see the Live Demo of this app.
 
 To get a local copy up and running follow these simple example steps.
 
