@@ -73,21 +73,28 @@
 
           </div>
 
+          <div class="row">
+            <div class="sixteen wide column">
+              <div class="field">
+                <%= form.label :document, 'Requested Document(s)' %>
+                <%= form.collection_check_boxes :document_ids, Document.all, :id, :name do |cb| %>
+                <% cb.label(class: 'checkbox-inline input_checkbox') {cb.check_box(class: 'checkbox') + cb.text } %>
+                <% end %>
+              </div>
+            </div>
+          </div>
 
+<!--
           <div class="equal width fields">
 
             <div class="field">
-              <%= form.label :document, 'Requested Document' %>
-              <%= form.collection_select :document, Document.order(:name),:id,:name, include_blank: true%>
+              <%#= form.label :document, 'Requested Document' %>
+              <%#= form.collection_select :document, Document.order(:name),:id,:name, include_blank: true%>
             </div>
 
-            <div class="field">
-              <%= form.label :express, 'Express Application?' %>
-              <%= form.radio_button :express, true , :class => 'radio-inline'%> <b>Yes</b> &nbsp;
-              <%= form.radio_button :express, false, :checked => true, :class => 'radio-inline' %> <b>No</b>
-            </div>
 
-          </div>
+
+          </div> -->
 
 
           <div class="equal width fields">
@@ -97,9 +104,15 @@
               <%= form.text_field :phone, id: :application_phone, :class => 'form-control' %>
             </div>
 
+            <!-- <div class="field">
+              <%#= form.label :quantity %>
+              <%#= form.number_field :quantity, id: :application_quantity %>
+            </div> -->
+
             <div class="field">
-              <%= form.label :quantity %>
-              <%= form.number_field :quantity, id: :application_quantity %>
+              <%= form.label :express, 'Express Application?' %>
+              <%= form.radio_button :express, true , :class => 'radio-inline'%> <b>Yes</b> &nbsp;
+              <%= form.radio_button :express, false, :checked => true, :class => 'radio-inline' %> <b>No</b>
             </div>
 
           </div>

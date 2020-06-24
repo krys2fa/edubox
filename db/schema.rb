@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200624093336) do
+ActiveRecord::Schema.define(version: 20200624135642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "application_documents", force: :cascade do |t|
+    t.bigint "application_id"
+    t.bigint "document_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["application_id"], name: "index_application_documents_on_application_id"
+    t.index ["document_id"], name: "index_application_documents_on_document_id"
+  end
 
   create_table "applications", force: :cascade do |t|
     t.string "firstname"
@@ -54,15 +63,6 @@ ActiveRecord::Schema.define(version: 20200624093336) do
     t.index ["faculty_id"], name: "index_applications_on_faculty_id"
     t.index ["institution_id"], name: "index_applications_on_institution_id"
     t.index ["user_id"], name: "index_applications_on_user_id"
-  end
-
-  create_table "applications_documents", force: :cascade do |t|
-    t.bigint "application_id"
-    t.bigint "document_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["application_id"], name: "index_applications_documents_on_application_id"
-    t.index ["document_id"], name: "index_applications_documents_on_document_id"
   end
 
   create_table "colleges", force: :cascade do |t|
@@ -128,12 +128,12 @@ ActiveRecord::Schema.define(version: 20200624093336) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "application_documents", "applications"
+  add_foreign_key "application_documents", "documents"
   add_foreign_key "applications", "colleges"
   add_foreign_key "applications", "faculties"
   add_foreign_key "applications", "institutions"
   add_foreign_key "applications", "users"
-  add_foreign_key "applications_documents", "applications"
-  add_foreign_key "applications_documents", "documents"
   add_foreign_key "colleges", "institutions"
   add_foreign_key "faculties", "institutions"
   add_foreign_key "programmes", "colleges"

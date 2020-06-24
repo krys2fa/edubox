@@ -1,5 +1,6 @@
 class Application < ApplicationRecord
-  has_and_belongs_to_many :documents
+  has_many :application_documents
+  has_many :documents, through: :application_documents
   belongs_to :user
   belongs_to :institution
   has_one :college

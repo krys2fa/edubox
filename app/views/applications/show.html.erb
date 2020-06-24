@@ -15,114 +15,121 @@
     </div>
     <div class="ui divider"></div>
 
-      <div class="ui attached fluid segment">
-        <strong>First Name:</strong>
-        <%= @application.firstname %>
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>First Name:</strong>
+      <%= @application.firstname %>
+    </div>
 
-      <div class="ui attached fluid segment">
-        <strong>Last Name:</strong>
-        <%= @application.lastname %>
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>Last Name:</strong>
+      <%= @application.lastname %>
+    </div>
 
-      <div class="ui attached fluid segment">
-        <strong>Date of Birth:</strong>
-        <%= @application.dob %>
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>Date of Birth:</strong>
+      <%= @application.dob %>
+    </div>
 
-      <div class="ui attached fluid segment">
-        <strong>Enrolled:</strong>
-        <%= @application.enrolled %>
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>Enrolled:</strong>
+      <%= @application.enrolled %>
+    </div>
 
-      <div class="ui attached fluid segment">
-        <strong>Completed:</strong>
-        <%= @application.completed %>
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>Completed:</strong>
+      <%= @application.completed %>
+    </div>
 
-      <div class="ui attached fluid segment">
-        <strong>Express:</strong>
-        <%= @application.express %>
-      </div>
-
+    <div class="ui attached fluid segment">
+      <strong>Express:</strong>
+      <%= @application.express %>
+    </div>
+    <!--
       <div class="ui attached fluid segment">
         <strong>Document:</strong>
-        <%= @document %>
-      </div>
+        <%#= @document %>
+      </div> -->
 
-      <div class="ui attached fluid segment">
-        <strong>Institution:</strong>
-        <%= @institution %>
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>Institution:</strong>
+      <%= @institution %>
+    </div>
 
-      <% if @college.present? %>
-      <div class="ui attached fluid segment">
-        <strong>College:</strong>
-        <%= @college %>
-      </div>
-      <% end %>
+    <% if @college.present? %>
+    <div class="ui attached fluid segment">
+      <strong>College:</strong>
+      <%= @college %>
+    </div>
+    <% end %>
 
-       <% if @faculty.present?  %>
-       <div class="ui attached fluid segment">
-         <strong>Faculty:</strong>
-         <%= @faculty %>
-       </div>
-       <% end %>
+    <% if @faculty.present?  %>
+    <div class="ui attached fluid segment">
+      <strong>Faculty:</strong>
+      <%= @faculty %>
+    </div>
+    <% end %>
 
-      <div class="ui attached fluid segment">
+    <!-- <div class="ui attached fluid segment">
         <strong>Quantity:</strong>
-        <%= @application.quantity %>
-      </div>
+        <%#= @application.quantity %>
+      </div> -->
 
-      <div class="ui attached fluid segment">
-        <strong>Student ID:</strong>
-        <%= @application.studentid %>
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>Student ID:</strong>
+      <%= @application.studentid %>
+    </div>
 
-      <div class="ui attached fluid segment">
-        <div class="ui large image">
-          <strong>Copy of Student ID:</strong>
-          <%= image_tag @application.student_id.url(:thumb)  %>
-        </div>
+    <div class="ui attached fluid segment">
+      <div class="ui large image">
+        <strong>Copy of Student ID:</strong>
+        <%= image_tag @application.student_id.url(:thumb)  %>
       </div>
+    </div>
 
-      <div class="ui attached fluid segment">
-        <div class="ui large image">
-          <strong>Copy of Acceptance Letter:</strong>
-          <%= image_tag @application.acceptance_letter.url(:thumb) %>
-        </div>
+    <div class="ui attached fluid segment">
+      <div class="ui large image">
+        <strong>Copy of Acceptance Letter:</strong>
+        <%= image_tag @application.acceptance_letter.url(:thumb) %>
       </div>
+    </div>
 
-      <div class="ui attached fluid segment">
-        <strong>Department:</strong>
-        <%= @application.department %>
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>Department:</strong>
+      <%= @application.department %>
+    </div>
 
-      <div class="ui attached fluid segment">
-        <strong>Phone:</strong>
-        <%= @application.phone %>
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>Phone:</strong>
+      <%= @application.phone %>
+    </div>
 
-      <div class="ui attached fluid segment">
-        <strong>Programme:</strong>
-        <%= @application.programme %>
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>Programme:</strong>
+      <%= @application.programme %>
+    </div>
 
-      <div class="ui attached fluid segment">
-        <strong>Address:</strong>
-        <%= @application.address %>
-        <!--<p>Coordinates: <%#= @application.latitude %> <%#= @application.longitude %></p> -->
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>Address:</strong>
+      <%= @application.address %>
+      <!--<p>Coordinates: <%#= @application.latitude %> <%#= @application.longitude %></p> -->
+    </div>
 
-      <div class="ui attached fluid segment">
-        <strong>Reason:</strong>
-        <%= @application.reason %>
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>Reason:</strong>
+      <%= @application.reason %>
+    </div>
 
-      <div class="ui attached fluid segment">
-        <strong>Processed:</strong>
-        <%= @application.processed %>
-      </div>
+    <div class="ui attached fluid segment">
+      <strong>Processed:</strong>
+      <%= @application.processed %>
+    </div>
+
+    <% if @application.documents.any? %>
+    <div class="ui attached fluid segment">
+      <strong>Requested Documents:</strong>
+      <%= render @application.documents %>
+    </div>
+    <% end %>
   </div>
 
   <%= link_to edit_application_path(@application), class: "ui primary basic labeled icon button" do %>
