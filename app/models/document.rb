@@ -1,3 +1,3 @@
 class Document < ApplicationRecord
-  belongs_to :application
+  has_and_belongs_to_many :applications
 end

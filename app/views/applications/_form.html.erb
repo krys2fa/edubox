@@ -13,12 +13,11 @@
         <% end %>
 
         <div class="ui large form">
-          <div class='equal width fields'>
             <div class="field">
               <label>First Name</label>
               <%= form.text_field :firstname, id: :application_firstname%>
             </div>
-        
+
 
             <div class="field">
               <label>Last Name</label>
@@ -29,42 +28,56 @@
               <label>Date of Birth:</label>
               <%= form.text_field :dob, id: :application_dob, :class => 'form-control'  %>
             </div>
+
+            <div class="field">
+              <%= form.label :institution_id, 'Institution Attended' %>
+              <%= form.collection_select :institution_id, Institution.order(:name),:id,:name, include_blank: true%>
+            </div>
+
+            <!-- <div class="equal width fields"> -->
+              <div class="field">
+                <%= form.label :college_id, 'College Attended (Leave blank if not applicable)' %>
+                <%= form.collection_select :college_id, College.order(:name),:id,:name, include_blank: true%>
+              </div>
+              <div class="field">
+                <%= form.label :faculty_id, 'Faculty Attended (Leave blank if not applicable)' %>
+                <%= form.collection_select :faculty_id, Faculty.order(:name),:id,:name, include_blank: true%>
+              </div>
+            <!-- </div> -->
+
+          <!-- <div class="equal width fields">
+
+            <div class="field">
+
+              <%#= form.label :institution_id, 'Institution Attended (Faculty based)' %>
+              <%#= form.collection_select :institution_id, Institution.order(:name),:id,:name, include_blank: true%>
+            </div>
+
+            <div class="field">
+
+              <%#= form.label :faculty_id, 'Faculty' %>
+              <%#= form.grouped_collection_select :faculty_id, Institution.order(:name), :faculties, :name, :id,:name, include_blank: true%>
+            </div>
+
           </div>
 
           <div class="equal width fields">
 
             <div class="field">
 
-              <%= form.label :institution_id, 'Institution Attended (Faculty based)' %>
-              <%= form.collection_select :institution_id, Institution.order(:name),:id,:name, include_blank: true%>
+              <%#= form.label :institution_id, 'Institution Attended (College based)' %>
+              <%#= form.collection_select :institution_id, Institution.order(:name),:id,:name, include_blank: true%>
             </div>
+
 
             <div class="field">
 
-              <%= form.label :faculty_id, 'Faculty' %>
-              <%= form.grouped_collection_select :faculty_id, Institution.order(:name), :faculties, :name, :id,:name, include_blank: true%>
+              <%#= form.label :college_id, 'College' %>
+              <%#= form.grouped_collection_select :college_id, Institution.order(:name), :colleges, :name, :id,:name, include_blank: true%>
             </div>
 
-          </div>
 
-          <div class="equal width fields">
-
-            <div class="field">
-
-              <%= form.label :institution_id, 'Institution Attended (College based)' %>
-              <%= form.collection_select :institution_id, Institution.order(:name),:id,:name, include_blank: true%>
-            </div>
-
-           
-
-            <div class="field">
-
-              <%= form.label :college_id, 'College' %>
-              <%= form.grouped_collection_select :college_id, Institution.order(:name), :colleges, :name, :id,:name, include_blank: true%>
-            </div>
-            
-
-          </div>
+          </div> -->
 
           <div class="equal width fields">
 
@@ -77,7 +90,7 @@
               <%= form.label :programme %>
               <%= form.text_field :programme, id: :application_programme, :class => 'form-control' %>
             </div>
-            
+
 
           </div>
 
@@ -100,8 +113,8 @@
           <div class="equal width fields">
 
             <div class="field">
-              <%= form.label :document_id, 'Requested Document' %>
-              <%= form.collection_select :document_id, Document.order(:name),:id,:name, include_blank: true%>
+              <%= form.label :document, 'Requested Document' %>
+              <%= form.collection_select :document, Document.order(:name),:id,:name, include_blank: true%>
             </div>
 
             <div class="field">
@@ -141,7 +154,7 @@
 
           </div>
 
-           
+
           <!--
           <div class="field">
             <label>Residential Address:</label>
@@ -167,7 +180,7 @@
           </div>
 
 
-          <%= form.submit 'Submit Request', :class => "ui submit button primary large" %>
+          <%= form.submit 'Submit Request', :class => "ui submit button primary" %>
 
         </div>
       <% end %>

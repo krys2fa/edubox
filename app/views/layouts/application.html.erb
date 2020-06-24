@@ -84,54 +84,54 @@
 
 
 
-    jQuery(function() {
-        var states1 = $("[name='application[faculty_id]']").html();
-        var states2 = $("[name='application[college_id]']").html();
+    // jQuery(function() {
+    //     var states1 = $("[name='application[faculty_id]']").html();
+    //     var states2 = $("[name='application[college_id]']").html();
 
-        $("[name='application[faculty_id]']").parent().hide();
-        $("[name='application[college_id]']").parent().hide();
+    //     $("[name='application[faculty_id]']").parent().hide();
+    //     $("[name='application[college_id]']").parent().hide();
 
-        $("[name='application[institution_id]']").eq(0).change(function() {
-            var faculty_institution, options1;
+    //     $("[name='application[institution_id]']").eq(0).change(function() {
+    //         var faculty_institution, options1;
 
-            faculty_institution = $("[name='application[institution_id]'] :selected").eq(0).text();
-            console.log("faculty_institution:" + faculty_institution);
+    //         faculty_institution = $("[name='application[institution_id]'] :selected").eq(0).text();
+    //         console.log("faculty_institution:" + faculty_institution);
 
-            console.log("states1:" + states1);
+    //         console.log("states1:" + states1);
 
-            options1 = $(states1).closest("optgroup[label='" + faculty_institution + "']").html();
-            console.log("options 1:" + options1);
+    //         options1 = $(states1).closest("optgroup[label='" + faculty_institution + "']").html();
+    //         console.log("options 1:" + options1);
 
-            if (options1) {
-                $("[name='application[faculty_id]']").html(options1);
-                $("[name='application[faculty_id]']").parent().show();
-            } else {
-                $("[name='application[faculty_id]']").empty();
-                $("[name='application[faculty_id]']").parent().hide();
-            }
-        });
+    //         if (options1) {
+    //             $("[name='application[faculty_id]']").html(options1);
+    //             $("[name='application[faculty_id]']").parent().show();
+    //         } else {
+    //             $("[name='application[faculty_id]']").empty();
+    //             $("[name='application[faculty_id]']").parent().hide();
+    //         }
+    //     });
 
 
-        $("[name='application[institution_id]']").eq(1).change(function() {
-            var college_institution, options2;
+    //     $("[name='application[institution_id]']").eq(1).change(function() {
+    //         var college_institution, options2;
 
-            college_institution = $("[name='application[institution_id]'] :selected").eq(1).text();
-            console.log("college_institution:" + college_institution);
+    //         college_institution = $("[name='application[institution_id]'] :selected").eq(1).text();
+    //         console.log("college_institution:" + college_institution);
 
-            options2 = $(states2).closest("optgroup[label='" + college_institution + "']").html();
-            console.log("options 2:" + options2);
+    //         options2 = $(states2).closest("optgroup[label='" + college_institution + "']").html();
+    //         console.log("options 2:" + options2);
 
-            if (options2) {
-                $("[name='application[college_id]']").html(options2);
-                $("[name='application[college_id]']").parent().show();
-            } else {
-                $("[name='application[college_id]']").empty();
-                $("[name='application[college_id]']").parent().hide();
-            }
+    //         if (options2) {
+    //             $("[name='application[college_id]']").html(options2);
+    //             $("[name='application[college_id]']").parent().show();
+    //         } else {
+    //             $("[name='application[college_id]']").empty();
+    //             $("[name='application[college_id]']").parent().hide();
+    //         }
 
-        });
+    //     });
 
-    });
+    // });
 
     $('.message .close')
     .on('click', function () {

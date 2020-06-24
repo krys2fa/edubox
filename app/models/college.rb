@@ -6,5 +6,5 @@ class College < ApplicationRecord
     def mother_institution(institution_id)
         Institution.find(institution_id).name
     end
-    
+
 end

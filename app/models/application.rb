@@ -1,8 +1,9 @@
 class Application < ApplicationRecord
-  has_one :document
+  has_and_belongs_to_many :documents
   belongs_to :user
   belongs_to :institution
-  validates :firstname, :lastname, :dob, :enrolled, :completed, 
+  has_one :college
+  validates :firstname, :lastname, :dob, :enrolled, :completed,
   			:quantity, :department, :phone, :institution_id,
         :programme, :address, :reason, :presence => true
 
@@ -21,6 +22,6 @@ class Application < ApplicationRecord
   def full_address
     address
   end
-  
-        
+
+
 end

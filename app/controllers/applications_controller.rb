@@ -15,9 +15,10 @@ class ApplicationsController < ApplicationController
   # GET /applications/1
   # GET /applications/1.json
   def show
-    #@document = Document.find(params[:id]).name
-    @document_id = @application.document_id
-    @document = Document.find_by_id(@document_id).name
+    @document = Document.find(@application.document).try(:name)
+    @college = College.find(@application.college_id).try(:name) unless @application.college_id.nil?
+    @faculty = Faculty.find(@application.faculty_id).try(:name) unless @application.faculty_id.nil?
+    @institution = Institution.find(@application.institution_id).try(:name)
   end
 
   # GET /applications/new
@@ -82,13 +83,13 @@ class ApplicationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_application
       @application = Application.find(params[:id])
-      
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def application_params
       params.require(:application).permit(:firstname, :lastname, :dob, :enrolled, :college_id, :faculty_id,
-                                          :completed, :express, :document_id, :quantity, :studentid, 
+                                          :completed, :express, :document, :quantity, :studentid,
                                           :department, :college, :school, :phone, :programme, :institution_id,
                                           :address, :reason, :type, :processed, :acceptance_letter, :student_id, :longitude, :latitude)
     end
