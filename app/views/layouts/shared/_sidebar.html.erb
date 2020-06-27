@@ -14,7 +14,7 @@
 
             <% if current_user.admin? %>
               <%=link_to '<i class="user secret icon"></i>Agents'.html_safe, agents_path, class: "item" %>
-              <%=link_to '<i class="users icon"></i>Customers'.html_safe, customers_path, class: "item" %>
+              <%#=link_to '<i class="users icon"></i>Customers'.html_safe, customers_path, class: "item" %>
               <%=link_to '<i class="home icon"></i>Institutions'.html_safe, institutions_path, class: "item" %>
               <%=link_to '<i class="file alternate icon"></i>Documents'.html_safe, documents_path, class: "item" %>
               <%=link_to '<i class="building icon"></i>Faculties'.html_safe, faculties_path, class: "item" %>
