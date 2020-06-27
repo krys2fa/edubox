@@ -89,8 +89,11 @@
     .transition('fade');
     });
 
+    function fade() {
+      $('.message').fadeOut( "slow" );
+    }
 
-
+    setTimeout(fade, 4000);
 
 });
   </script>
